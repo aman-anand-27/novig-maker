@@ -1,0 +1,48 @@
+# Novig Maker — line-setting edge finder (MLB main lines).
+#
+# Compares Novig's peer-to-peer prices against blended SHARP fair value
+# (Pinnacle + Matchbook, both from one `eu` fetch) and surfaces two edges:
+#   TAKE — Novig already offers a price LONGER than sharp fair → back it now.
+#   MAKE — Novig's price is shorter than fair → post a new best-in-market line
+#          just above fair (still +EV) and let soft money fill it.
+#
+# Book availability confirmed by live free-key probe 2026-06-20
+# (scripts/probe_novig_maker.py): pinnacle + matchbook both cover h2h/spreads/
+# totals in `eu`; novig in `us_ex`; circasports / circa / betcris NOT returned.
+# Budget: eu + us_ex × 3 markets = 6 credits/run.
+
+odds_api:
+  base_url: https://api.the-odds-api.com/v4
+  oddsFormat: decimal
+
+sports: [baseball_mlb]          # MLB only for now (keep it focused)
+markets: [h2h, spreads, totals] # main lines only
+regions: [eu, us_ex]            # eu = Pinnacle + Matchbook (sharp); us_ex = Novig
+
+target_books:
+  exchange: novig               # the book we set/take lines on
+
+sharp_books:
+  # Fair value = median of each present book's DEVIGGED probability for the side.
+  # Both live in `eu` and cover all three main lines (probe 2026-06-20).
+  anchors: [pinnacle, matchbook]
+  labels:
+    pinnacle: Pinnacle
+    matchbook: Matchbook
+  min_anchors: 1                # need at least this many sharp books to price a side
+
+devig:
+  method: multiplicative        # or: shin (Shin pushes more vig onto longshots)
+
+thresholds:
+  take_min_edge_pct: 1.0       # surface a TAKE only when its EV >= this (%)
+  make_min_edge_pct: 1.5       # surface a MAKE only when shading room >= this (%)
+  # MAKE realism guard: only flag a MAKE when sharp fair is at most this much
+  # longer than Novig's current best (in %). A huge gap means you'd have to post
+  # a line far better than the book to be +EV — unlikely to fill. Empty = no cap.
+  make_max_book_gap_pct: 8.0
+  hide_live: true              # drop in-progress games from the dashboard
+
+# Recommended MAKE post price = fair price padded by this edge (%) so the posted
+# line clears fair with a cushion. Reported alongside the +EV floor (= fair).
+make_post_edge_pct: 1.0

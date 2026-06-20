@@ -1,0 +1,2399 @@
+{
+  "generated_at": "2026-06-20 16:04 EDT",
+  "thresholds": {
+    "take_min_edge_pct": 1.0,
+    "make_min_edge_pct": 1.5,
+    "make_max_book_gap_pct": 8.0,
+    "hide_live": true
+  },
+  "sharp_books": [
+    "pinnacle",
+    "matchbook"
+  ],
+  "rows": [
+    {
+      "game_id": "bc0eb3e2abd5d0ddb3e22dc71abf652a",
+      "sport": "MLB",
+      "game": "Minnesota Twins @ Arizona Diamondbacks",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "totals",
+      "side": "Under 9.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 54.18,
+      "fair_american": "-118",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5417721518987342,
+          "fair_american": "-118",
+          "raw_american": "-123"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "-133",
+      "novig_dec": 1.75,
+      "novig_opp_american": "+117",
+      "take_ev_pct": -5.19,
+      "book_gap_pct": 5.47,
+      "post_american": "-116",
+      "post_floor_american": "-118",
+      "make_ev_pct": 1.0,
+      "edge_score": 5.47,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "8e059160b850333f99e5414be7fede74",
+      "sport": "MLB",
+      "game": "Baltimore Orioles @ Los Angeles Dodgers",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "spreads",
+      "side": "Los Angeles Dodgers -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 52.17,
+      "fair_american": "-109",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5242966751918159,
+          "fair_american": "-110",
+          "raw_american": "-116"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5190839694656489,
+          "fair_american": "-108",
+          "raw_american": "-112"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-118",
+      "novig_dec": 1.85,
+      "novig_opp_american": "+113",
+      "take_ev_pct": -3.49,
+      "book_gap_pct": 3.61,
+      "post_american": "-107",
+      "post_floor_american": "-109",
+      "make_ev_pct": 1.0,
+      "edge_score": 3.61,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "11f0aee64edb29086a8ca3368f0fe44f",
+      "sport": "MLB",
+      "game": "Los Angeles Angels @ Athletics",
+      "commence_time": "2026-06-21T02:06:00Z",
+      "market": "totals",
+      "side": "Over 9.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 50.77,
+      "fair_american": "-103",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5090439276485788,
+          "fair_american": "-104",
+          "raw_american": "-111"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5064267352185091,
+          "fair_american": "-103",
+          "raw_american": "-109"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-109",
+      "novig_dec": 1.92,
+      "novig_opp_american": "+100",
+      "take_ev_pct": -2.51,
+      "book_gap_pct": 2.58,
+      "post_american": "-101",
+      "post_floor_american": "-103",
+      "make_ev_pct": 1.0,
+      "edge_score": 2.58,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "a36cc8e7c18477f87bd91d87f8839f49",
+      "sport": "MLB",
+      "game": "San Francisco Giants @ Miami Marlins",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "totals",
+      "side": "Over 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 51.6,
+      "fair_american": "-107",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5167095115681234,
+          "fair_american": "-107",
+          "raw_american": "-114"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5153061224489797,
+          "fair_american": "-106",
+          "raw_american": "-111"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-112",
+      "novig_dec": 1.89,
+      "novig_opp_american": "+108",
+      "take_ev_pct": -2.47,
+      "book_gap_pct": 2.54,
+      "post_american": "-104",
+      "post_floor_american": "-107",
+      "make_ev_pct": 1.0,
+      "edge_score": 2.54,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "d0bf798e1c85fe47d8160217d79b5a3e",
+      "sport": "MLB",
+      "game": "Cleveland Guardians @ Houston Astros",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "spreads",
+      "side": "Houston Astros -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 38.55,
+      "fair_american": "+159",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.3825665859564165,
+          "fair_american": "+161",
+          "raw_american": "+155"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.3883495145631068,
+          "fair_american": "+158",
+          "raw_american": "+152"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+153",
+      "novig_dec": 2.53,
+      "novig_opp_american": "-167",
+      "take_ev_pct": -2.48,
+      "book_gap_pct": 2.54,
+      "post_american": "+162",
+      "post_floor_american": "+159",
+      "make_ev_pct": 1.0,
+      "edge_score": 2.54,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "6344d2ce9df189689ed256d05cfcffb4",
+      "sport": "MLB",
+      "game": "New York Mets @ Philadelphia Phillies",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "totals",
+      "side": "Over 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 48.33,
+      "fair_american": "+107",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.48071979434447304,
+          "fair_american": "+108",
+          "raw_american": "+102"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4858611825192801,
+          "fair_american": "+106",
+          "raw_american": "+100"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+102",
+      "novig_dec": 2.02,
+      "novig_opp_american": "-109",
+      "take_ev_pct": -2.38,
+      "book_gap_pct": 2.43,
+      "post_american": "+109",
+      "post_floor_american": "+107",
+      "make_ev_pct": 1.0,
+      "edge_score": 2.43,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "bc0eb3e2abd5d0ddb3e22dc71abf652a",
+      "sport": "MLB",
+      "game": "Minnesota Twins @ Arizona Diamondbacks",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "spreads",
+      "side": "Minnesota Twins +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 62.4,
+      "fair_american": "-166",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6240963855421686,
+          "fair_american": "-166",
+          "raw_american": "-179"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6238095238095239,
+          "fair_american": "-166",
+          "raw_american": "-172"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-175",
+      "novig_dec": 1.57,
+      "novig_opp_american": "+163",
+      "take_ev_pct": -2.04,
+      "book_gap_pct": 2.08,
+      "post_american": "-162",
+      "post_floor_american": "-166",
+      "make_ev_pct": 1.0,
+      "edge_score": 2.08,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "71d79346a4e1f6058e517c895d646f2e",
+      "sport": "MLB",
+      "game": "Washington Nationals @ Tampa Bay Rays",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "totals",
+      "side": "Over 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 53.57,
+      "fair_american": "-115",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5357142857142857,
+          "fair_american": "-115",
+          "raw_american": "-122"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "-120",
+      "novig_dec": 1.83,
+      "novig_opp_american": "+113",
+      "take_ev_pct": -1.96,
+      "book_gap_pct": 2.0,
+      "post_american": "-113",
+      "post_floor_american": "-115",
+      "make_ev_pct": 1.0,
+      "edge_score": 2.0,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "a36cc8e7c18477f87bd91d87f8839f49",
+      "sport": "MLB",
+      "game": "San Francisco Giants @ Miami Marlins",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "h2h",
+      "side": "Miami Marlins",
+      "kind": "MAKE",
+      "fair_prob_pct": 56.03,
+      "fair_american": "-127",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5614035087719298,
+          "fair_american": "-128",
+          "raw_american": "-133"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5591939546599496,
+          "fair_american": "-127",
+          "raw_american": "-133"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-133",
+      "novig_dec": 1.75,
+      "novig_opp_american": "+125",
+      "take_ev_pct": -1.95,
+      "book_gap_pct": 1.99,
+      "post_american": "-125",
+      "post_floor_american": "-127",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.99,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "71d79346a4e1f6058e517c895d646f2e",
+      "sport": "MLB",
+      "game": "Washington Nationals @ Tampa Bay Rays",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "h2h",
+      "side": "Washington Nationals",
+      "kind": "MAKE",
+      "fair_prob_pct": 47.14,
+      "fair_american": "+112",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4707379134860051,
+          "fair_american": "+112",
+          "raw_american": "+108"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4720812182741116,
+          "fair_american": "+112",
+          "raw_american": "+108"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+108",
+      "novig_dec": 2.08,
+      "novig_opp_american": "-115",
+      "take_ev_pct": -1.95,
+      "book_gap_pct": 1.99,
+      "post_american": "+114",
+      "post_floor_american": "+112",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.99,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "4bb2c510f37ac3221423f6fe96d81822",
+      "sport": "MLB",
+      "game": "Pittsburgh Pirates @ Colorado Rockies",
+      "commence_time": "2026-06-21T01:11:00Z",
+      "market": "h2h",
+      "side": "Colorado Rockies",
+      "kind": "MAKE",
+      "fair_prob_pct": 34.29,
+      "fair_american": "+192",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.34642032332563516,
+          "fair_american": "+189",
+          "raw_american": "+183"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.33940774487471526,
+          "fair_american": "+195",
+          "raw_american": "+190"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+186",
+      "novig_dec": 2.86,
+      "novig_opp_american": "-189",
+      "take_ev_pct": -1.93,
+      "book_gap_pct": 1.96,
+      "post_american": "+195",
+      "post_floor_american": "+192",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.96,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "bc0eb3e2abd5d0ddb3e22dc71abf652a",
+      "sport": "MLB",
+      "game": "Minnesota Twins @ Arizona Diamondbacks",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "h2h",
+      "side": "Arizona Diamondbacks",
+      "kind": "MAKE",
+      "fair_prob_pct": 54.49,
+      "fair_american": "-120",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.547979797979798,
+          "fair_american": "-121",
+          "raw_american": "-127"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5417721518987342,
+          "fair_american": "-118",
+          "raw_american": "-123"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-125",
+      "novig_dec": 1.8,
+      "novig_opp_american": "+117",
+      "take_ev_pct": -1.92,
+      "book_gap_pct": 1.96,
+      "post_american": "-117",
+      "post_floor_american": "-120",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.96,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "4bb2c510f37ac3221423f6fe96d81822",
+      "sport": "MLB",
+      "game": "Pittsburgh Pirates @ Colorado Rockies",
+      "commence_time": "2026-06-21T01:11:00Z",
+      "market": "totals",
+      "side": "Over 10.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 49.55,
+      "fair_american": "+102",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4974226804123712,
+          "fair_american": "+101",
+          "raw_american": "-105"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.493573264781491,
+          "fair_american": "+103",
+          "raw_american": "-103"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-102",
+      "novig_dec": 1.98,
+      "novig_opp_american": "+100",
+      "take_ev_pct": -1.89,
+      "book_gap_pct": 1.93,
+      "post_american": "+104",
+      "post_floor_american": "+102",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.93,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "8e059160b850333f99e5414be7fede74",
+      "sport": "MLB",
+      "game": "Baltimore Orioles @ Los Angeles Dodgers",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "spreads",
+      "side": "Baltimore Orioles +1.5",
+      "kind": "TAKE",
+      "fair_prob_pct": 47.83,
+      "fair_american": "+109",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4757033248081842,
+          "fair_american": "+110",
+          "raw_american": "+105"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4809160305343511,
+          "fair_american": "+108",
+          "raw_american": "+104"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+113",
+      "novig_dec": 2.13,
+      "novig_opp_american": "-118",
+      "take_ev_pct": 1.88,
+      "book_gap_pct": -1.85,
+      "post_american": "+111",
+      "post_floor_american": "+109",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.88,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "3efd1785852b80caaeeb2e4b8e8db0f2",
+      "sport": "MLB",
+      "game": "San Diego Padres @ Texas Rangers",
+      "commence_time": "2026-06-20T20:06:00Z",
+      "market": "h2h",
+      "side": "Texas Rangers",
+      "kind": "MAKE",
+      "fair_prob_pct": 54.53,
+      "fair_american": "-120",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5429292929292929,
+          "fair_american": "-119",
+          "raw_american": "-123"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5477386934673367,
+          "fair_american": "-121",
+          "raw_american": "-125"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-125",
+      "novig_dec": 1.8,
+      "novig_opp_american": "+120",
+      "take_ev_pct": -1.84,
+      "book_gap_pct": 1.87,
+      "post_american": "-117",
+      "post_floor_american": "-120",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.87,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "a36cc8e7c18477f87bd91d87f8839f49",
+      "sport": "MLB",
+      "game": "San Francisco Giants @ Miami Marlins",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "spreads",
+      "side": "Miami Marlins -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 37.77,
+      "fair_american": "+165",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.37922705314009664,
+          "fair_american": "+164",
+          "raw_american": "+157"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.37619047619047624,
+          "fair_american": "+166",
+          "raw_american": "+162"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+160",
+      "novig_dec": 2.6,
+      "novig_opp_american": "-169",
+      "take_ev_pct": -1.8,
+      "book_gap_pct": 1.83,
+      "post_american": "+167",
+      "post_floor_american": "+165",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.83,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "d0bf798e1c85fe47d8160217d79b5a3e",
+      "sport": "MLB",
+      "game": "Cleveland Guardians @ Houston Astros",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "h2h",
+      "side": "Houston Astros",
+      "kind": "MAKE",
+      "fair_prob_pct": 56.45,
+      "fair_american": "-130",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5639097744360902,
+          "fair_american": "-129",
+          "raw_american": "-135"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.565,
+          "fair_american": "-130",
+          "raw_american": "-135"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-135",
+      "novig_dec": 1.74,
+      "novig_opp_american": "+130",
+      "take_ev_pct": -1.78,
+      "book_gap_pct": 1.82,
+      "post_american": "-127",
+      "post_floor_american": "-130",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.82,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "6344d2ce9df189689ed256d05cfcffb4",
+      "sport": "MLB",
+      "game": "New York Mets @ Philadelphia Phillies",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "spreads",
+      "side": "Philadelphia Phillies -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 44.64,
+      "fair_american": "+124",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.44556962025316454,
+          "fair_american": "+124",
+          "raw_american": "+119"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.44723618090452255,
+          "fair_american": "+124",
+          "raw_american": "+120"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+120",
+      "novig_dec": 2.2,
+      "novig_opp_american": "-127",
+      "take_ev_pct": -1.79,
+      "book_gap_pct": 1.82,
+      "post_american": "+126",
+      "post_floor_american": "+124",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.82,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "954f9616bdfe5989a3ed4cc8cc1b3472",
+      "sport": "MLB",
+      "game": "Milwaukee Brewers @ Atlanta Braves",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "totals",
+      "side": "Under 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 54.91,
+      "fair_american": "-122",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5491183879093199,
+          "fair_american": "-122",
+          "raw_american": "-127"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "-127",
+      "novig_dec": 1.79,
+      "novig_opp_american": "+125",
+      "take_ev_pct": -1.71,
+      "book_gap_pct": 1.74,
+      "post_american": "-119",
+      "post_floor_american": "-122",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.74,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "d0bf798e1c85fe47d8160217d79b5a3e",
+      "sport": "MLB",
+      "game": "Cleveland Guardians @ Houston Astros",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "spreads",
+      "side": "Cleveland Guardians +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 61.45,
+      "fair_american": "-159",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6174334140435834,
+          "fair_american": "-161",
+          "raw_american": "-172"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6116504854368933,
+          "fair_american": "-158",
+          "raw_american": "-167"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-167",
+      "novig_dec": 1.6,
+      "novig_opp_american": "+153",
+      "take_ev_pct": -1.67,
+      "book_gap_pct": 1.7,
+      "post_american": "-155",
+      "post_floor_american": "-159",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.7,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "c17cdf3ec5c9c493c782139a03e71bcc",
+      "sport": "MLB",
+      "game": "Boston Red Sox @ Seattle Mariners",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "totals",
+      "side": "Under 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 54.08,
+      "fair_american": "-118",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5408163265306123,
+          "fair_american": "-118",
+          "raw_american": "-125"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "-122",
+      "novig_dec": 1.82,
+      "novig_opp_american": "+115",
+      "take_ev_pct": -1.57,
+      "book_gap_pct": 1.6,
+      "post_american": "-115",
+      "post_floor_american": "-118",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.6,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "11f0aee64edb29086a8ca3368f0fe44f",
+      "sport": "MLB",
+      "game": "Los Angeles Angels @ Athletics",
+      "commence_time": "2026-06-21T02:06:00Z",
+      "market": "totals",
+      "side": "Under 9.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 49.23,
+      "fair_american": "+103",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.49095607235142114,
+          "fair_american": "+104",
+          "raw_american": "-103"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.493573264781491,
+          "fair_american": "+103",
+          "raw_american": "-103"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+100",
+      "novig_dec": 2.0,
+      "novig_opp_american": "-109",
+      "take_ev_pct": -1.55,
+      "book_gap_pct": 1.57,
+      "post_american": "+105",
+      "post_floor_american": "+103",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.57,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "954f9616bdfe5989a3ed4cc8cc1b3472",
+      "sport": "MLB",
+      "game": "Milwaukee Brewers @ Atlanta Braves",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "spreads",
+      "side": "Milwaukee Brewers +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 64.36,
+      "fair_american": "-181",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6455399061032865,
+          "fair_american": "-182",
+          "raw_american": "-196"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6416861826697892,
+          "fair_american": "-179",
+          "raw_american": "-189"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-189",
+      "novig_dec": 1.53,
+      "novig_opp_american": "+182",
+      "take_ev_pct": -1.53,
+      "book_gap_pct": 1.55,
+      "post_american": "-176",
+      "post_floor_american": "-181",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.55,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "3efd1785852b80caaeeb2e4b8e8db0f2",
+      "sport": "MLB",
+      "game": "San Diego Padres @ Texas Rangers",
+      "commence_time": "2026-06-20T20:06:00Z",
+      "market": "spreads",
+      "side": "Texas Rangers -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 36.49,
+      "fair_american": "+174",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.36342042755344417,
+          "fair_american": "+175",
+          "raw_american": "+168"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.36643026004728135,
+          "fair_american": "+173",
+          "raw_american": "+168"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+170",
+      "novig_dec": 2.7,
+      "novig_opp_american": "-179",
+      "take_ev_pct": -1.47,
+      "book_gap_pct": 1.49,
+      "post_american": "+177",
+      "post_floor_american": "+174",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.49,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.5% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "954f9616bdfe5989a3ed4cc8cc1b3472",
+      "sport": "MLB",
+      "game": "Milwaukee Brewers @ Atlanta Braves",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "totals",
+      "side": "Over 7.5",
+      "kind": "TAKE",
+      "fair_prob_pct": 45.09,
+      "fair_american": "+122",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.45088161209068006,
+          "fair_american": "+122",
+          "raw_american": "+118"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "+125",
+      "novig_dec": 2.25,
+      "novig_opp_american": "-127",
+      "take_ev_pct": 1.45,
+      "book_gap_pct": -1.43,
+      "post_american": "+124",
+      "post_floor_american": "+122",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.45,
+      "is_live": false,
+      "qualified": true,
+      "disqualify_reasons": []
+    },
+    {
+      "game_id": "71d79346a4e1f6058e517c895d646f2e",
+      "sport": "MLB",
+      "game": "Washington Nationals @ Tampa Bay Rays",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "spreads",
+      "side": "Tampa Bay Rays -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 35.48,
+      "fair_american": "+182",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.3544600938967136,
+          "fair_american": "+182",
+          "raw_american": "+175"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.3551401869158879,
+          "fair_american": "+182",
+          "raw_american": "+176"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+178",
+      "novig_dec": 2.78,
+      "novig_opp_american": "-189",
+      "take_ev_pct": -1.37,
+      "book_gap_pct": 1.38,
+      "post_american": "+185",
+      "post_floor_american": "+182",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.38,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.4% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "71d79346a4e1f6058e517c895d646f2e",
+      "sport": "MLB",
+      "game": "Washington Nationals @ Tampa Bay Rays",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "spreads",
+      "side": "Washington Nationals +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 64.52,
+      "fair_american": "-182",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6455399061032865,
+          "fair_american": "-182",
+          "raw_american": "-196"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6448598130841121,
+          "fair_american": "-182",
+          "raw_american": "-192"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-189",
+      "novig_dec": 1.53,
+      "novig_opp_american": "+178",
+      "take_ev_pct": -1.28,
+      "book_gap_pct": 1.3,
+      "post_american": "-177",
+      "post_floor_american": "-182",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.3,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.3% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "c17cdf3ec5c9c493c782139a03e71bcc",
+      "sport": "MLB",
+      "game": "Boston Red Sox @ Seattle Mariners",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "totals",
+      "side": "Over 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 45.92,
+      "fair_american": "+118",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.45918367346938777,
+          "fair_american": "+118",
+          "raw_american": "+112"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "+115",
+      "novig_dec": 2.15,
+      "novig_opp_american": "-122",
+      "take_ev_pct": -1.28,
+      "book_gap_pct": 1.29,
+      "post_american": "+120",
+      "post_floor_american": "+118",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.29,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.3% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "3efd1785852b80caaeeb2e4b8e8db0f2",
+      "sport": "MLB",
+      "game": "San Diego Padres @ Texas Rangers",
+      "commence_time": "2026-06-20T20:06:00Z",
+      "market": "totals",
+      "side": "Under 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 50.38,
+      "fair_american": "-102",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5038560411311055,
+          "fair_american": "-102",
+          "raw_american": "-108"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5038363171355499,
+          "fair_american": "-102",
+          "raw_american": "-106"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-104",
+      "novig_dec": 1.96,
+      "novig_opp_american": "+102",
+      "take_ev_pct": -1.25,
+      "book_gap_pct": 1.26,
+      "post_american": "+100",
+      "post_floor_american": "-102",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.26,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.3% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "bc0eb3e2abd5d0ddb3e22dc71abf652a",
+      "sport": "MLB",
+      "game": "Minnesota Twins @ Arizona Diamondbacks",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "h2h",
+      "side": "Minnesota Twins",
+      "kind": "MAKE",
+      "fair_prob_pct": 45.51,
+      "fair_american": "+120",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4520202020202021,
+          "fair_american": "+121",
+          "raw_american": "+117"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4582278481012658,
+          "fair_american": "+118",
+          "raw_american": "+114"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+117",
+      "novig_dec": 2.17,
+      "novig_opp_american": "-125",
+      "take_ev_pct": -1.24,
+      "book_gap_pct": 1.25,
+      "post_american": "+122",
+      "post_floor_american": "+120",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.25,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.2% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "6344d2ce9df189689ed256d05cfcffb4",
+      "sport": "MLB",
+      "game": "New York Mets @ Philadelphia Phillies",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "h2h",
+      "side": "New York Mets",
+      "kind": "MAKE",
+      "fair_prob_pct": 36.6,
+      "fair_american": "+173",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.3640661938534279,
+          "fair_american": "+175",
+          "raw_american": "+169"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.36792452830188677,
+          "fair_american": "+172",
+          "raw_american": "+168"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+170",
+      "novig_dec": 2.7,
+      "novig_opp_american": "-179",
+      "take_ev_pct": -1.18,
+      "book_gap_pct": 1.2,
+      "post_american": "+176",
+      "post_floor_american": "+173",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.2,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.2% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "71d79346a4e1f6058e517c895d646f2e",
+      "sport": "MLB",
+      "game": "Washington Nationals @ Tampa Bay Rays",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "h2h",
+      "side": "Tampa Bay Rays",
+      "kind": "MAKE",
+      "fair_prob_pct": 52.86,
+      "fair_american": "-112",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5292620865139949,
+          "fair_american": "-112",
+          "raw_american": "-118"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5279187817258882,
+          "fair_american": "-112",
+          "raw_american": "-116"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-115",
+      "novig_dec": 1.87,
+      "novig_opp_american": "+108",
+      "take_ev_pct": -1.15,
+      "book_gap_pct": 1.17,
+      "post_american": "-110",
+      "post_floor_american": "-112",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.17,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.2% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "71d79346a4e1f6058e517c895d646f2e",
+      "sport": "MLB",
+      "game": "Washington Nationals @ Tampa Bay Rays",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "totals",
+      "side": "Under 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 46.43,
+      "fair_american": "+115",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4642857142857143,
+          "fair_american": "+115",
+          "raw_american": "+110"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "+113",
+      "novig_dec": 2.13,
+      "novig_opp_american": "-120",
+      "take_ev_pct": -1.11,
+      "book_gap_pct": 1.12,
+      "post_american": "+118",
+      "post_floor_american": "+115",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.12,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.1% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "6344d2ce9df189689ed256d05cfcffb4",
+      "sport": "MLB",
+      "game": "New York Mets @ Philadelphia Phillies",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "h2h",
+      "side": "Philadelphia Phillies",
+      "kind": "MAKE",
+      "fair_prob_pct": 63.4,
+      "fair_american": "-173",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.635933806146572,
+          "fair_american": "-175",
+          "raw_american": "-185"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6320754716981132,
+          "fair_american": "-172",
+          "raw_american": "-179"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-179",
+      "novig_dec": 1.56,
+      "novig_opp_american": "+170",
+      "take_ev_pct": -1.1,
+      "book_gap_pct": 1.11,
+      "post_american": "-169",
+      "post_floor_american": "-173",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.11,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.1% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "bc0eb3e2abd5d0ddb3e22dc71abf652a",
+      "sport": "MLB",
+      "game": "Minnesota Twins @ Arizona Diamondbacks",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "spreads",
+      "side": "Arizona Diamondbacks -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 37.6,
+      "fair_american": "+166",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.3759036144578313,
+          "fair_american": "+166",
+          "raw_american": "+159"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.37619047619047624,
+          "fair_american": "+166",
+          "raw_american": "+162"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+163",
+      "novig_dec": 2.63,
+      "novig_opp_american": "-175",
+      "take_ev_pct": -1.1,
+      "book_gap_pct": 1.11,
+      "post_american": "+169",
+      "post_floor_american": "+166",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.11,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.1% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "a36cc8e7c18477f87bd91d87f8839f49",
+      "sport": "MLB",
+      "game": "San Francisco Giants @ Miami Marlins",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "h2h",
+      "side": "San Francisco Giants",
+      "kind": "MAKE",
+      "fair_prob_pct": 43.97,
+      "fair_american": "+127",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.43859649122807015,
+          "fair_american": "+128",
+          "raw_american": "+124"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4408060453400503,
+          "fair_american": "+127",
+          "raw_american": "+122"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+125",
+      "novig_dec": 2.25,
+      "novig_opp_american": "-133",
+      "take_ev_pct": -1.07,
+      "book_gap_pct": 1.08,
+      "post_american": "+130",
+      "post_floor_american": "+127",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.08,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.1% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "a36cc8e7c18477f87bd91d87f8839f49",
+      "sport": "MLB",
+      "game": "San Francisco Giants @ Miami Marlins",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "spreads",
+      "side": "San Francisco Giants +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 62.23,
+      "fair_american": "-165",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6207729468599034,
+          "fair_american": "-164",
+          "raw_american": "-175"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6238095238095239,
+          "fair_american": "-166",
+          "raw_american": "-172"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-169",
+      "novig_dec": 1.59,
+      "novig_opp_american": "+160",
+      "take_ev_pct": -1.06,
+      "book_gap_pct": 1.07,
+      "post_american": "-161",
+      "post_floor_american": "-165",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.07,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.1% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "11f0aee64edb29086a8ca3368f0fe44f",
+      "sport": "MLB",
+      "game": "Los Angeles Angels @ Athletics",
+      "commence_time": "2026-06-21T02:06:00Z",
+      "market": "spreads",
+      "side": "Athletics -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 43.98,
+      "fair_american": "+127",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4365482233502538,
+          "fair_american": "+129",
+          "raw_american": "+122"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4430379746835443,
+          "fair_american": "+126",
+          "raw_american": "+120"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+125",
+      "novig_dec": 2.25,
+      "novig_opp_american": "-130",
+      "take_ev_pct": -1.05,
+      "book_gap_pct": 1.06,
+      "post_american": "+130",
+      "post_floor_american": "+127",
+      "make_ev_pct": 1.0,
+      "edge_score": 1.06,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.1% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "c17cdf3ec5c9c493c782139a03e71bcc",
+      "sport": "MLB",
+      "game": "Boston Red Sox @ Seattle Mariners",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "spreads",
+      "side": "Seattle Mariners -1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 35.12,
+      "fair_american": "+185",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.35362997658079626,
+          "fair_american": "+183",
+          "raw_american": "+176"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.348729792147806,
+          "fair_american": "+187",
+          "raw_american": "+182"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+182",
+      "novig_dec": 2.82,
+      "novig_opp_american": "-189",
+      "take_ev_pct": -0.97,
+      "book_gap_pct": 0.98,
+      "post_american": "+188",
+      "post_floor_american": "+185",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.98,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 1.0% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "3efd1785852b80caaeeb2e4b8e8db0f2",
+      "sport": "MLB",
+      "game": "San Diego Padres @ Texas Rangers",
+      "commence_time": "2026-06-20T20:06:00Z",
+      "market": "spreads",
+      "side": "San Diego Padres +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 63.51,
+      "fair_american": "-174",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6365795724465559,
+          "fair_american": "-175",
+          "raw_american": "-189"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6335697399527188,
+          "fair_american": "-173",
+          "raw_american": "-182"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-179",
+      "novig_dec": 1.56,
+      "novig_opp_american": "+170",
+      "take_ev_pct": -0.93,
+      "book_gap_pct": 0.94,
+      "post_american": "-169",
+      "post_floor_american": "-174",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.94,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.9% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "6344d2ce9df189689ed256d05cfcffb4",
+      "sport": "MLB",
+      "game": "New York Mets @ Philadelphia Phillies",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "spreads",
+      "side": "New York Mets +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 55.36,
+      "fair_american": "-124",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5544303797468354,
+          "fair_american": "-124",
+          "raw_american": "-132"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5527638190954773,
+          "fair_american": "-124",
+          "raw_american": "-128"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-127",
+      "novig_dec": 1.79,
+      "novig_opp_american": "+120",
+      "take_ev_pct": -0.91,
+      "book_gap_pct": 0.91,
+      "post_american": "-121",
+      "post_floor_american": "-124",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.91,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.9% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "4bb2c510f37ac3221423f6fe96d81822",
+      "sport": "MLB",
+      "game": "Pittsburgh Pirates @ Colorado Rockies",
+      "commence_time": "2026-06-21T01:11:00Z",
+      "market": "totals",
+      "side": "Under 10.5",
+      "kind": "TAKE",
+      "fair_prob_pct": 50.45,
+      "fair_american": "-102",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.502577319587629,
+          "fair_american": "-101",
+          "raw_american": "-108"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5064267352185091,
+          "fair_american": "-103",
+          "raw_american": "-109"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+100",
+      "novig_dec": 2.0,
+      "novig_opp_american": "-102",
+      "take_ev_pct": 0.9,
+      "book_gap_pct": -0.89,
+      "post_american": "+100",
+      "post_floor_american": "-102",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.9,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "take EV 0.9% < 1.0%"
+      ]
+    },
+    {
+      "game_id": "d0bf798e1c85fe47d8160217d79b5a3e",
+      "sport": "MLB",
+      "game": "Cleveland Guardians @ Houston Astros",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "totals",
+      "side": "Over 8.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 48.59,
+      "fair_american": "+106",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4858611825192801,
+          "fair_american": "+106",
+          "raw_american": "+100"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4858611825192801,
+          "fair_american": "+106",
+          "raw_american": "+100"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+104",
+      "novig_dec": 2.04,
+      "novig_opp_american": "-106",
+      "take_ev_pct": -0.88,
+      "book_gap_pct": 0.89,
+      "post_american": "+108",
+      "post_floor_american": "+106",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.89,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.9% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "11f0aee64edb29086a8ca3368f0fe44f",
+      "sport": "MLB",
+      "game": "Los Angeles Angels @ Athletics",
+      "commence_time": "2026-06-21T02:06:00Z",
+      "market": "spreads",
+      "side": "Los Angeles Angels +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 56.02,
+      "fair_american": "-127",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5634517766497462,
+          "fair_american": "-129",
+          "raw_american": "-139"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5569620253164557,
+          "fair_american": "-126",
+          "raw_american": "-133"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-130",
+      "novig_dec": 1.77,
+      "novig_opp_american": "+125",
+      "take_ev_pct": -0.84,
+      "book_gap_pct": 0.85,
+      "post_american": "-125",
+      "post_floor_american": "-127",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.85,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.8% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "6344d2ce9df189689ed256d05cfcffb4",
+      "sport": "MLB",
+      "game": "New York Mets @ Philadelphia Phillies",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "totals",
+      "side": "Under 7.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 51.67,
+      "fair_american": "-107",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5192802056555269,
+          "fair_american": "-108",
+          "raw_american": "-115"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5141388174807198,
+          "fair_american": "-106",
+          "raw_american": "-112"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-109",
+      "novig_dec": 1.92,
+      "novig_opp_american": "+102",
+      "take_ev_pct": -0.79,
+      "book_gap_pct": 0.8,
+      "post_american": "-105",
+      "post_floor_american": "-107",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.8,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.8% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "c17cdf3ec5c9c493c782139a03e71bcc",
+      "sport": "MLB",
+      "game": "Boston Red Sox @ Seattle Mariners",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "spreads",
+      "side": "Boston Red Sox +1.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 64.88,
+      "fair_american": "-185",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6463700234192037,
+          "fair_american": "-183",
+          "raw_american": "-196"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6512702078521939,
+          "fair_american": "-187",
+          "raw_american": "-196"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-189",
+      "novig_dec": 1.53,
+      "novig_opp_american": "+182",
+      "take_ev_pct": -0.73,
+      "book_gap_pct": 0.74,
+      "post_american": "-180",
+      "post_floor_american": "-185",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.74,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.7% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "c17cdf3ec5c9c493c782139a03e71bcc",
+      "sport": "MLB",
+      "game": "Boston Red Sox @ Seattle Mariners",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "h2h",
+      "side": "Seattle Mariners",
+      "kind": "MAKE",
+      "fair_prob_pct": 53.66,
+      "fair_american": "-116",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5392405063291139,
+          "fair_american": "-117",
+          "raw_american": "-122"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5340050377833753,
+          "fair_american": "-115",
+          "raw_american": "-118"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-118",
+      "novig_dec": 1.85,
+      "novig_opp_american": "+115",
+      "take_ev_pct": -0.72,
+      "book_gap_pct": 0.73,
+      "post_american": "-113",
+      "post_floor_american": "-116",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.73,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.7% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "a36cc8e7c18477f87bd91d87f8839f49",
+      "sport": "MLB",
+      "game": "San Francisco Giants @ Miami Marlins",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "totals",
+      "side": "Under 7.5",
+      "kind": "TAKE",
+      "fair_prob_pct": 48.4,
+      "fair_american": "+107",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4832904884318767,
+          "fair_american": "+107",
+          "raw_american": "+101"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.48469387755102045,
+          "fair_american": "+106",
+          "raw_american": "+102"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+108",
+      "novig_dec": 2.08,
+      "novig_opp_american": "-112",
+      "take_ev_pct": 0.67,
+      "book_gap_pct": -0.67,
+      "post_american": "+109",
+      "post_floor_american": "+107",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.67,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "take EV 0.7% < 1.0%"
+      ]
+    },
+    {
+      "game_id": "954f9616bdfe5989a3ed4cc8cc1b3472",
+      "sport": "MLB",
+      "game": "Milwaukee Brewers @ Atlanta Braves",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "h2h",
+      "side": "Atlanta Braves",
+      "kind": "MAKE",
+      "fair_prob_pct": 54.59,
+      "fair_american": "-120",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5454545454545454,
+          "fair_american": "-120",
+          "raw_american": "-125"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5463659147869674,
+          "fair_american": "-120",
+          "raw_american": "-123"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-122",
+      "novig_dec": 1.82,
+      "novig_opp_american": "+120",
+      "take_ev_pct": -0.64,
+      "book_gap_pct": 0.65,
+      "post_american": "-118",
+      "post_floor_american": "-120",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.65,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.7% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "bc0eb3e2abd5d0ddb3e22dc71abf652a",
+      "sport": "MLB",
+      "game": "Minnesota Twins @ Arizona Diamondbacks",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "totals",
+      "side": "Over 9.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 45.82,
+      "fair_american": "+118",
+      "fair_details": [
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4582278481012658,
+          "fair_american": "+118",
+          "raw_american": "+114"
+        }
+      ],
+      "fair_book_count": 1,
+      "novig_american": "+117",
+      "novig_dec": 2.17,
+      "novig_opp_american": "-133",
+      "take_ev_pct": -0.56,
+      "book_gap_pct": 0.57,
+      "post_american": "+120",
+      "post_floor_american": "+118",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.57,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.6% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "8e059160b850333f99e5414be7fede74",
+      "sport": "MLB",
+      "game": "Baltimore Orioles @ Los Angeles Dodgers",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "h2h",
+      "side": "Los Angeles Dodgers",
+      "kind": "MAKE",
+      "fair_prob_pct": 70.02,
+      "fair_american": "-234",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.7029914529914529,
+          "fair_american": "-237",
+          "raw_american": "-256"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6974248927038628,
+          "fair_american": "-230",
+          "raw_american": "-244"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-238",
+      "novig_dec": 1.42,
+      "novig_opp_american": "+233",
+      "take_ev_pct": -0.57,
+      "book_gap_pct": 0.57,
+      "post_american": "-226",
+      "post_floor_american": "-234",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.57,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.6% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "4bb2c510f37ac3221423f6fe96d81822",
+      "sport": "MLB",
+      "game": "Pittsburgh Pirates @ Colorado Rockies",
+      "commence_time": "2026-06-21T01:11:00Z",
+      "market": "h2h",
+      "side": "Pittsburgh Pirates",
+      "kind": "TAKE",
+      "fair_prob_pct": 65.71,
+      "fair_american": "-192",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6535796766743649,
+          "fair_american": "-189",
+          "raw_american": "-200"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.6605922551252846,
+          "fair_american": "-195",
+          "raw_american": "-204"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-189",
+      "novig_dec": 1.53,
+      "novig_opp_american": "+186",
+      "take_ev_pct": 0.53,
+      "book_gap_pct": -0.53,
+      "post_american": "-186",
+      "post_floor_american": "-192",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.53,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "take EV 0.5% < 1.0%"
+      ]
+    },
+    {
+      "game_id": "11f0aee64edb29086a8ca3368f0fe44f",
+      "sport": "MLB",
+      "game": "Los Angeles Angels @ Athletics",
+      "commence_time": "2026-06-21T02:06:00Z",
+      "market": "h2h",
+      "side": "Los Angeles Angels",
+      "kind": "MAKE",
+      "fair_prob_pct": 39.32,
+      "fair_american": "+154",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.39460784313725494,
+          "fair_american": "+153",
+          "raw_american": "+147"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.39172749391727496,
+          "fair_american": "+155",
+          "raw_american": "+150"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+153",
+      "novig_dec": 2.53,
+      "novig_opp_american": "-156",
+      "take_ev_pct": -0.53,
+      "book_gap_pct": 0.53,
+      "post_american": "+157",
+      "post_floor_american": "+154",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.53,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.5% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "954f9616bdfe5989a3ed4cc8cc1b3472",
+      "sport": "MLB",
+      "game": "Milwaukee Brewers @ Atlanta Braves",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "spreads",
+      "side": "Atlanta Braves -1.5",
+      "kind": "TAKE",
+      "fair_prob_pct": 35.64,
+      "fair_american": "+181",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.3544600938967136,
+          "fair_american": "+182",
+          "raw_american": "+175"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.3583138173302107,
+          "fair_american": "+179",
+          "raw_american": "+174"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+182",
+      "novig_dec": 2.82,
+      "novig_opp_american": "-189",
+      "take_ev_pct": 0.5,
+      "book_gap_pct": -0.5,
+      "post_american": "+183",
+      "post_floor_american": "+181",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.5,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "take EV 0.5% < 1.0%"
+      ]
+    },
+    {
+      "game_id": "11f0aee64edb29086a8ca3368f0fe44f",
+      "sport": "MLB",
+      "game": "Los Angeles Angels @ Athletics",
+      "commence_time": "2026-06-21T02:06:00Z",
+      "market": "h2h",
+      "side": "Athletics",
+      "kind": "MAKE",
+      "fair_prob_pct": 60.68,
+      "fair_american": "-154",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.6053921568627452,
+          "fair_american": "-153",
+          "raw_american": "-164"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.608272506082725,
+          "fair_american": "-155",
+          "raw_american": "-164"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-156",
+      "novig_dec": 1.64,
+      "novig_opp_american": "+153",
+      "take_ev_pct": -0.48,
+      "book_gap_pct": 0.48,
+      "post_american": "-151",
+      "post_floor_american": "-154",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.48,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.5% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "c17cdf3ec5c9c493c782139a03e71bcc",
+      "sport": "MLB",
+      "game": "Boston Red Sox @ Seattle Mariners",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "h2h",
+      "side": "Boston Red Sox",
+      "kind": "MAKE",
+      "fair_prob_pct": 46.34,
+      "fair_american": "+116",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4607594936708861,
+          "fair_american": "+117",
+          "raw_american": "+113"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4659949622166247,
+          "fair_american": "+115",
+          "raw_american": "+112"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+115",
+      "novig_dec": 2.15,
+      "novig_opp_american": "-118",
+      "take_ev_pct": -0.37,
+      "book_gap_pct": 0.38,
+      "post_american": "+118",
+      "post_floor_american": "+116",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.38,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.4% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "d0bf798e1c85fe47d8160217d79b5a3e",
+      "sport": "MLB",
+      "game": "Cleveland Guardians @ Houston Astros",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "totals",
+      "side": "Under 8.5",
+      "kind": "MAKE",
+      "fair_prob_pct": 51.41,
+      "fair_american": "-106",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.5141388174807198,
+          "fair_american": "-106",
+          "raw_american": "-112"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.5141388174807198,
+          "fair_american": "-106",
+          "raw_american": "-112"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "-106",
+      "novig_dec": 1.94,
+      "novig_opp_american": "+104",
+      "take_ev_pct": -0.26,
+      "book_gap_pct": 0.26,
+      "post_american": "-104",
+      "post_floor_american": "-106",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.26,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.3% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "3efd1785852b80caaeeb2e4b8e8db0f2",
+      "sport": "MLB",
+      "game": "San Diego Padres @ Texas Rangers",
+      "commence_time": "2026-06-20T20:06:00Z",
+      "market": "totals",
+      "side": "Over 7.5",
+      "kind": "TAKE",
+      "fair_prob_pct": 49.62,
+      "fair_american": "+102",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4961439588688946,
+          "fair_american": "+102",
+          "raw_american": "-104"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.49616368286445,
+          "fair_american": "+102",
+          "raw_american": "-103"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+102",
+      "novig_dec": 2.02,
+      "novig_opp_american": "-104",
+      "take_ev_pct": 0.22,
+      "book_gap_pct": -0.22,
+      "post_american": "+104",
+      "post_floor_american": "+102",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.22,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "take EV 0.2% < 1.0%"
+      ]
+    },
+    {
+      "game_id": "d0bf798e1c85fe47d8160217d79b5a3e",
+      "sport": "MLB",
+      "game": "Cleveland Guardians @ Houston Astros",
+      "commence_time": "2026-06-20T23:16:00Z",
+      "market": "h2h",
+      "side": "Cleveland Guardians",
+      "kind": "TAKE",
+      "fair_prob_pct": 43.55,
+      "fair_american": "+130",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.43609022556390975,
+          "fair_american": "+129",
+          "raw_american": "+125"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.43500000000000005,
+          "fair_american": "+130",
+          "raw_american": "+126"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+130",
+      "novig_dec": 2.3,
+      "novig_opp_american": "-135",
+      "take_ev_pct": 0.18,
+      "book_gap_pct": -0.18,
+      "post_american": "+132",
+      "post_floor_american": "+130",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.18,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "take EV 0.2% < 1.0%"
+      ]
+    },
+    {
+      "game_id": "8e059160b850333f99e5414be7fede74",
+      "sport": "MLB",
+      "game": "Baltimore Orioles @ Los Angeles Dodgers",
+      "commence_time": "2026-06-21T02:11:00Z",
+      "market": "h2h",
+      "side": "Baltimore Orioles",
+      "kind": "MAKE",
+      "fair_prob_pct": 29.98,
+      "fair_american": "+234",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.29700854700854695,
+          "fair_american": "+237",
+          "raw_american": "+229"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.3025751072961374,
+          "fair_american": "+230",
+          "raw_american": "+225"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+233",
+      "novig_dec": 3.33,
+      "novig_opp_american": "-238",
+      "take_ev_pct": -0.17,
+      "book_gap_pct": 0.17,
+      "post_american": "+237",
+      "post_floor_american": "+234",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.17,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.2% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "954f9616bdfe5989a3ed4cc8cc1b3472",
+      "sport": "MLB",
+      "game": "Milwaukee Brewers @ Atlanta Braves",
+      "commence_time": "2026-06-20T20:11:00Z",
+      "market": "h2h",
+      "side": "Milwaukee Brewers",
+      "kind": "MAKE",
+      "fair_prob_pct": 45.41,
+      "fair_american": "+120",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.4545454545454545,
+          "fair_american": "+120",
+          "raw_american": "+116"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.4536340852130325,
+          "fair_american": "+120",
+          "raw_american": "+118"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+120",
+      "novig_dec": 2.2,
+      "novig_opp_american": "-122",
+      "take_ev_pct": -0.1,
+      "book_gap_pct": 0.1,
+      "post_american": "+122",
+      "post_floor_american": "+120",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.1,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "shading room 0.1% < 1.5%"
+      ]
+    },
+    {
+      "game_id": "3efd1785852b80caaeeb2e4b8e8db0f2",
+      "sport": "MLB",
+      "game": "San Diego Padres @ Texas Rangers",
+      "commence_time": "2026-06-20T20:06:00Z",
+      "market": "h2h",
+      "side": "San Diego Padres",
+      "kind": "TAKE",
+      "fair_prob_pct": 45.47,
+      "fair_american": "+120",
+      "fair_details": [
+        {
+          "book": "pinnacle",
+          "fair_prob": 0.457070707070707,
+          "fair_american": "+119",
+          "raw_american": "+115"
+        },
+        {
+          "book": "matchbook",
+          "fair_prob": 0.45226130653266333,
+          "fair_american": "+121",
+          "raw_american": "+118"
+        }
+      ],
+      "fair_book_count": 2,
+      "novig_american": "+120",
+      "novig_dec": 2.2,
+      "novig_opp_american": "-125",
+      "take_ev_pct": 0.03,
+      "book_gap_pct": -0.03,
+      "post_american": "+122",
+      "post_floor_american": "+120",
+      "make_ev_pct": 1.0,
+      "edge_score": 0.03,
+      "is_live": false,
+      "qualified": false,
+      "disqualify_reasons": [
+        "take EV 0.0% < 1.0%"
+      ]
+    }
+  ]
+}

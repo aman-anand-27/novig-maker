@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novig Maker — Line-Setting Edges</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+<style>
+:root {
+  --bg: #0d1117; --surface: #161b22; --surface2: #1c2128; --border: #21262d;
+  --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff;
+  --green: #3fb950; --yellow: #d29922; --red: #f85149; --purple: #bc8cff;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, ui-sans-serif, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans);
+  font-size: 13px; line-height: 1.5; padding: 1rem 1.25rem; }
+a { color: var(--accent); }
+header { margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+h1 { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+h2 { font-size: 0.95rem; margin: 1.5rem 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+.meta-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip { display: inline-flex; align-items: center; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 12px; padding: 0.1em 0.65em;
+  font-size: 0.72rem; color: var(--muted); }
+.legend { font-size: 0.78rem; color: var(--muted); margin: 0.5rem 0 0.25rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 0.6rem 0.8rem; }
+.legend b { color: var(--text); }
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.03em; position: sticky; top: 0; background: var(--bg); }
+tbody tr:hover { background: var(--surface); }
+.mono { font-family: var(--mono); }
+.pos { color: var(--green); font-weight: 600; }
+.neg { color: var(--red); }
+.muted { color: var(--muted); }
+.tag { font-size: 0.68rem; padding: 0.05em 0.5em; border-radius: 10px; font-weight: 600; }
+.tag-take { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+.tag-make { background: rgba(188,140,255,0.15); color: var(--purple); border: 1px solid rgba(188,140,255,0.3); }
+.tag-mkt { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+.fair-cell { cursor: help; border-bottom: 1px dotted var(--muted); }
+.count { color: var(--muted); font-weight: 400; font-size: 0.8rem; }
+details { margin-top: 1rem; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
+.empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎯 Novig Maker — Line-Setting Edges (MLB)</h1>
+  <div class="meta-chips">
+    <span class="chip">Generated {{ generated_at }}</span>
+    <span class="chip">Sharp fair: {{ sharp_labels | join(" + ") }} (devigged blend)</span>
+    <span class="chip">TAKE ≥ {{ thresholds.take_min_edge_pct }}%</span>
+    <span class="chip">MAKE ≥ {{ thresholds.make_min_edge_pct }}%</span>
+    {% if thresholds.make_max_book_gap_pct %}<span class="chip">MAKE gap cap {{ thresholds.make_max_book_gap_pct }}%</span>{% endif %}
+  </div>
+</header>
+
+<div class="legend">
+  <b>TAKE</b> — Novig already pays <i>longer</i> than sharp fair, so backing it now is +EV. <b>EV%</b> is your edge.<br>
+  <b>MAKE</b> — Novig's price is short of fair. <b>Post</b> a new best-in-market order at the suggested price (it clears the <b>+EV floor</b> = sharp fair, so it stays profitable) and let soft money on the other side fill it. <b>Gap</b> = how far Novig's current best sits below fair (your shading room). Posting <i>below</i> the floor beats the book but is &minus;EV — don't.
+</div>
+
+<h2>✅ TAKE <span class="count">{{ take|length }} edge{{ '' if take|length == 1 else 's' }}</span></h2>
+{% if take %}
+<table>
+<thead><tr>
+  <th>Game</th><th>Start</th><th>Mkt</th><th>Side</th>
+  <th>Sharp fair</th><th>Novig now</th><th>EV%</th>
+</tr></thead>
+<tbody>
+{% for r in take %}
+<tr>
+  <td>{{ r.game }}</td>
+  <td class="muted">{{ r.commence_time | to_et }}</td>
+  <td><span class="tag tag-mkt">{{ r.market }}</span></td>
+  <td>{{ r.side }}</td>
+  <td class="mono fair-cell" title="{% for d in r.fair_details %}{{ d.book }}: {{ d.fair_american }} (raw {{ d.raw_american }}){% if not loop.last %}&#10;{% endif %}{% endfor %}">{{ r.fair_american }} <span class="muted">({{ r.fair_prob_pct }}%)</span></td>
+  <td class="mono">{{ r.novig_american }}</td>
+  <td class="pos">+{{ '%.1f' % r.take_ev_pct }}%</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}<div class="empty">No qualifying TAKE edges right now.</div>{% endif %}
+
+<h2>🛠️ MAKE <span class="count">{{ make|length }} edge{{ '' if make|length == 1 else 's' }}</span></h2>
+{% if make %}
+<table>
+<thead><tr>
+  <th>Game</th><th>Start</th><th>Mkt</th><th>Side</th>
+  <th>Sharp fair</th><th>Novig now</th><th>+EV floor</th><th>Post @</th><th>Gap</th>
+</tr></thead>
+<tbody>
+{% for r in make %}
+<tr>
+  <td>{{ r.game }}</td>
+  <td class="muted">{{ r.commence_time | to_et }}</td>
+  <td><span class="tag tag-mkt">{{ r.market }}</span></td>
+  <td>{{ r.side }}</td>
+  <td class="mono fair-cell" title="{% for d in r.fair_details %}{{ d.book }}: {{ d.fair_american }} (raw {{ d.raw_american }}){% if not loop.last %}&#10;{% endif %}{% endfor %}">{{ r.fair_american }} <span class="muted">({{ r.fair_prob_pct }}%)</span></td>
+  <td class="mono muted">{{ r.novig_american }}</td>
+  <td class="mono">{{ r.post_floor_american }}</td>
+  <td class="mono pos">{{ r.post_american }} <span class="muted">(+{{ '%.1f' % r.make_ev_pct }}%)</span></td>
+  <td>{{ '%.1f' % r.book_gap_pct }}%</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}<div class="empty">No qualifying MAKE edges right now.</div>{% endif %}
+
+{% if other %}
+<details>
+  <summary>Below threshold ({{ other|length }})</summary>
+  <table style="margin-top:0.5rem">
+  <thead><tr><th>Game</th><th>Mkt</th><th>Side</th><th>Kind</th><th>Sharp fair</th><th>Novig now</th><th>Why hidden</th></tr></thead>
+  <tbody>
+  {% for r in other %}
+  <tr>
+    <td>{{ r.game }}</td>
+    <td><span class="tag tag-mkt">{{ r.market }}</span></td>
+    <td>{{ r.side }}</td>
+    <td><span class="tag tag-{{ r.kind|lower }}">{{ r.kind }}</span></td>
+    <td class="mono">{{ r.fair_american }}</td>
+    <td class="mono">{{ r.novig_american }}</td>
+    <td class="muted">{{ r.disqualify_reasons | join("; ") }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+</details>
+{% endif %}
+
+</body>
+</html>

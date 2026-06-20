@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.novig_cache/
+probe_results/
+.venv/
+.claude/
