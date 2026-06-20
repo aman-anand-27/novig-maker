@@ -51,6 +51,7 @@ def render(rows: list[dict], cfg: dict) -> None:
         generated_at=generated_at,
         thresholds=cfg["thresholds"],
         sharp_labels=[cfg["sharp_books"]["labels"].get(a, a) for a in cfg["sharp_books"]["anchors"]],
+        book_labels=cfg["sharp_books"]["labels"],
         take=take,
         make=make,
         other=other,

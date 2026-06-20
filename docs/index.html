@@ -41,18 +41,33 @@ tbody tr:hover { background: var(--surface); }
 .tag-take { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
 .tag-make { background: rgba(188,140,255,0.15); color: var(--purple); border: 1px solid rgba(188,140,255,0.3); }
 .tag-mkt { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
-.fair-cell { cursor: help; border-bottom: 1px dotted var(--muted); }
 .count { color: var(--muted); font-weight: 400; font-size: 0.8rem; }
 details { margin-top: 1rem; }
 summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 .empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; }
+/* ── Click-to-expand book breakdown ─────────────────────────────── */
+.edge-row { cursor: pointer; }
+.caret { color: var(--muted); display: inline-block; width: 0.9em; font-size: 0.7rem;
+  transition: transform 0.1s; }
+.edge-row.open .caret { transform: rotate(90deg); }
+.src-badge { font-size: 0.62rem; padding: 0.04em 0.45em; border-radius: 8px;
+  margin-left: 0.45em; border: 1px solid var(--border); color: var(--muted);
+  vertical-align: middle; }
+.src-1 { color: var(--yellow); border-color: rgba(210,153,34,0.4); background: rgba(210,153,34,0.12); }
+.detail-row > td { background: var(--surface2); padding: 0.55rem 0.9rem 0.7rem 2rem; }
+.detail-title { color: var(--muted); font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.03em; margin-bottom: 0.35rem; }
+.detail-table { width: auto; }
+.detail-table th, .detail-table td { border: none; padding: 0.12rem 1.6rem 0.12rem 0; }
+.detail-table th { font-size: 0.64rem; }
+.detail-novig { color: var(--muted); margin-top: 0.45rem; }
 </style>
 </head>
 <body>
 <header>
   <h1>🎯 Novig Maker — Line-Setting Edges (MLB)</h1>
   <div class="meta-chips">
-    <span class="chip">Generated 2026-06-20 16:04 EDT</span>
+    <span class="chip">Generated 2026-06-20 16:37 EDT</span>
     <span class="chip">Sharp fair: Pinnacle + Matchbook (devigged blend)</span>
     <span class="chip">TAKE ≥ 1.0%</span>
     <span class="chip">MAKE ≥ 1.5%</span>
@@ -62,10 +77,13 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 
 <div class="legend">
   <b>TAKE</b> — Novig already pays <i>longer</i> than sharp fair, so backing it now is +EV. <b>EV%</b> is your edge.<br>
-  <b>MAKE</b> — Novig's price is short of fair. <b>Post</b> a new best-in-market order at the suggested price (it clears the <b>+EV floor</b> = sharp fair, so it stays profitable) and let soft money on the other side fill it. <b>Gap</b> = how far Novig's current best sits below fair (your shading room). Posting <i>below</i> the floor beats the book but is &minus;EV — don't.
+  <b>MAKE</b> — Novig's price is short of fair. <b>Post</b> a new best-in-market order at the suggested price (it clears the <b>+EV floor</b> = sharp fair, so it stays profitable) and let soft money on the other side fill it. <b>Gap</b> = how far Novig's current best sits below fair (your shading room). Posting <i>below</i> the floor beats the book but is &minus;EV — don't.<br>
+  <span class="muted">Click any row to see which sharp books fed the fair value. A <span class="src-badge src-1">1&nbsp;bk</span> badge means only one book priced that side — treat it as less reliable.</span>
 </div>
 
-<h2>✅ TAKE <span class="count">2 edges</span></h2>
+
+
+<h2>✅ TAKE <span class="count">4 edges</span></h2>
 
 <table>
 <thead><tr>
@@ -74,31 +92,141 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 </tr></thead>
 <tbody>
 
-<tr>
-  <td>Baltimore Orioles @ Los Angeles Dodgers</td>
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Chicago White Sox @ Detroit Tigers</td>
+  <td class="muted">6/21 01:41 PM EDT</td>
+  <td><span class="tag tag-mkt">spreads</span></td>
+  <td>Chicago White Sox -1.5</td>
+  <td class="mono">+147 <span class="muted">(40.46%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono">+156</td>
+  <td class="pos">+3.6%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="7">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">+106</td>
+        <td class="mono">+147 <span class="muted">(40.5%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+147</span> (40.46%) ·
+      Novig now <span class="mono">+156</span> this side · <span class="mono">-217</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>San Francisco Giants @ Miami Marlins</td>
+  <td class="muted">6/21 01:41 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Miami Marlins</td>
+  <td class="mono">+114 <span class="muted">(46.65%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono">+122</td>
+  <td class="pos">+3.6%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="7">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-120</td>
+        <td class="mono">+114 <span class="muted">(46.6%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+114</span> (46.65%) ·
+      Novig now <span class="mono">+122</span> this side · <span class="mono">-130</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Baltimore Orioles @ Los Angeles Dodgers</td>
+  <td class="muted">6/21 04:11 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Baltimore Orioles</td>
+  <td class="mono">+180 <span class="muted">(35.75%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono">+186</td>
+  <td class="pos">+2.2%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="7">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">+148</td>
+        <td class="mono">+180 <span class="muted">(35.8%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+180</span> (35.75%) ·
+      Novig now <span class="mono">+186</span> this side · <span class="mono">-204</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Baltimore Orioles @ Los Angeles Dodgers</td>
   <td class="muted">6/20 10:11 PM EDT</td>
   <td><span class="tag tag-mkt">spreads</span></td>
   <td>Baltimore Orioles +1.5</td>
-  <td class="mono fair-cell" title="pinnacle: +110 (raw +105)&#10;matchbook: +108 (raw +104)">+109 <span class="muted">(47.83%)</span></td>
-  <td class="mono">+113</td>
-  <td class="pos">+1.9%</td>
+  <td class="mono">+101 <span class="muted">(49.81%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono">+104</td>
+  <td class="pos">+1.6%</td>
 </tr>
 
-<tr>
-  <td>Milwaukee Brewers @ Atlanta Braves</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
-  <td><span class="tag tag-mkt">totals</span></td>
-  <td>Over 7.5</td>
-  <td class="mono fair-cell" title="matchbook: +122 (raw +118)">+122 <span class="muted">(45.09%)</span></td>
-  <td class="mono">+125</td>
-  <td class="pos">+1.4%</td>
+<tr class="detail-row" hidden>
+  <td colspan="7">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-105</td>
+        <td class="mono">+100 <span class="muted">(50.0%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-103</td>
+        <td class="mono">+102 <span class="muted">(49.6%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+101</span> (49.81%) ·
+      Novig now <span class="mono">+104</span> this side · <span class="mono">-106</span> opposite
+    </div>
+  </td>
 </tr>
+
 
 </tbody>
 </table>
 
 
-<h2>🛠️ MAKE <span class="count">22 edges</span></h2>
+<h2>🛠️ MAKE <span class="count">25 edges</span></h2>
 
 <table>
 <thead><tr>
@@ -107,269 +235,890 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 </tr></thead>
 <tbody>
 
-<tr>
-  <td>Minnesota Twins @ Arizona Diamondbacks</td>
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>San Francisco Giants @ Miami Marlins</td>
+  <td class="muted">6/21 01:41 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>San Francisco Giants</td>
+  <td class="mono">-114 <span class="muted">(53.35%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-130</td>
+  <td class="mono">-114</td>
+  <td class="mono pos">-112 <span class="muted">(+1.0%)</span></td>
+  <td>5.9%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-167</td>
+        <td class="mono">-114 <span class="muted">(53.4%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-114</span> (53.35%) ·
+      Novig now <span class="mono">-130</span> this side · <span class="mono">+122</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Minnesota Twins @ Arizona Diamondbacks</td>
   <td class="muted">6/20 10:11 PM EDT</td>
   <td><span class="tag tag-mkt">totals</span></td>
   <td>Under 9.5</td>
-  <td class="mono fair-cell" title="matchbook: -118 (raw -123)">-118 <span class="muted">(54.18%)</span></td>
-  <td class="mono muted">-133</td>
-  <td class="mono">-118</td>
-  <td class="mono pos">-116 <span class="muted">(+1.0%)</span></td>
-  <td>5.5%</td>
+  <td class="mono">-117 <span class="muted">(53.94%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-130</td>
+  <td class="mono">-117</td>
+  <td class="mono pos">-115 <span class="muted">(+1.0%)</span></td>
+  <td>4.7%</td>
 </tr>
 
-<tr>
-  <td>Baltimore Orioles @ Los Angeles Dodgers</td>
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-123</td>
+        <td class="mono">-117 <span class="muted">(53.9%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-117</span> (53.94%) ·
+      Novig now <span class="mono">-130</span> this side · <span class="mono">+113</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Baltimore Orioles @ Los Angeles Dodgers</td>
+  <td class="muted">6/21 04:11 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Los Angeles Dodgers</td>
+  <td class="mono">-180 <span class="muted">(64.25%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-204</td>
+  <td class="mono">-180</td>
+  <td class="mono pos">-175 <span class="muted">(+1.0%)</span></td>
+  <td>4.5%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-263</td>
+        <td class="mono">-180 <span class="muted">(64.2%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-180</span> (64.25%) ·
+      Novig now <span class="mono">-204</span> this side · <span class="mono">+186</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Toronto Blue Jays @ Chicago Cubs</td>
+  <td class="muted">6/21 02:21 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Chicago Cubs</td>
+  <td class="mono">+113 <span class="muted">(47.01%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">+104</td>
+  <td class="mono">+113</td>
+  <td class="mono pos">+115 <span class="muted">(+1.0%)</span></td>
+  <td>4.3%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-116</td>
+        <td class="mono">+113 <span class="muted">(47.0%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+113</span> (47.01%) ·
+      Novig now <span class="mono">+104</span> this side · <span class="mono">-112</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Chicago White Sox @ Detroit Tigers</td>
+  <td class="muted">6/21 01:41 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Detroit Tigers</td>
+  <td class="mono">-103 <span class="muted">(50.74%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-112</td>
+  <td class="mono">-103</td>
+  <td class="mono pos">-101 <span class="muted">(+1.0%)</span></td>
+  <td>4.3%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-152</td>
+        <td class="mono">-103 <span class="muted">(50.7%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-103</span> (50.74%) ·
+      Novig now <span class="mono">-112</span> this side · <span class="mono">+102</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Baltimore Orioles @ Los Angeles Dodgers</td>
+  <td class="muted">6/20 10:11 PM EDT</td>
+  <td><span class="tag tag-mkt">totals</span></td>
+  <td>Under 8.5</td>
+  <td class="mono">-114 <span class="muted">(53.3%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-122</td>
+  <td class="mono">-114</td>
+  <td class="mono pos">-112 <span class="muted">(+1.0%)</span></td>
+  <td>3.1%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-119</td>
+        <td class="mono">-114 <span class="muted">(53.3%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-114</span> (53.3%) ·
+      Novig now <span class="mono">-122</span> this side · <span class="mono">+115</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Boston Red Sox @ Seattle Mariners</td>
+  <td class="muted">6/20 10:11 PM EDT</td>
+  <td><span class="tag tag-mkt">spreads</span></td>
+  <td>Boston Red Sox +1.5</td>
+  <td class="mono">-188 <span class="muted">(65.24%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono muted">-204</td>
+  <td class="mono">-188</td>
+  <td class="mono pos">-182 <span class="muted">(+1.0%)</span></td>
+  <td>2.9%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-200</td>
+        <td class="mono">-186 <span class="muted">(65.0%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-196</td>
+        <td class="mono">-189 <span class="muted">(65.4%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-188</span> (65.24%) ·
+      Novig now <span class="mono">-204</span> this side · <span class="mono">+190</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Milwaukee Brewers @ Atlanta Braves</td>
+  <td class="muted">6/21 01:36 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Milwaukee Brewers</td>
+  <td class="mono">+123 <span class="muted">(44.85%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">+117</td>
+  <td class="mono">+123</td>
+  <td class="mono pos">+125 <span class="muted">(+1.0%)</span></td>
+  <td>2.8%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-102</td>
+        <td class="mono">+123 <span class="muted">(44.8%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+123</span> (44.85%) ·
+      Novig now <span class="mono">+117</span> this side · <span class="mono">-125</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Boston Red Sox @ Seattle Mariners</td>
+  <td class="muted">6/21 04:11 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Seattle Mariners</td>
+  <td class="mono">-125 <span class="muted">(55.62%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-133</td>
+  <td class="mono">-125</td>
+  <td class="mono pos">-123 <span class="muted">(+1.0%)</span></td>
+  <td>2.7%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-172</td>
+        <td class="mono">-125 <span class="muted">(55.6%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-125</span> (55.62%) ·
+      Novig now <span class="mono">-133</span> this side · <span class="mono">+122</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Cincinnati Reds @ New York Yankees</td>
+  <td class="muted">6/21 01:36 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Cincinnati Reds</td>
+  <td class="mono">+131 <span class="muted">(43.27%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">+125</td>
+  <td class="mono">+131</td>
+  <td class="mono pos">+133 <span class="muted">(+1.0%)</span></td>
+  <td>2.7%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-102</td>
+        <td class="mono">+131 <span class="muted">(43.3%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+131</span> (43.27%) ·
+      Novig now <span class="mono">+125</span> this side · <span class="mono">-135</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Cleveland Guardians @ Houston Astros</td>
+  <td class="muted">6/21 02:11 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Houston Astros</td>
+  <td class="mono">-119 <span class="muted">(54.39%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-127</td>
+  <td class="mono">-119</td>
+  <td class="mono pos">-117 <span class="muted">(+1.0%)</span></td>
+  <td>2.7%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-164</td>
+        <td class="mono">-119 <span class="muted">(54.4%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-119</span> (54.39%) ·
+      Novig now <span class="mono">-127</span> this side · <span class="mono">+120</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Baltimore Orioles @ Los Angeles Dodgers</td>
   <td class="muted">6/20 10:11 PM EDT</td>
   <td><span class="tag tag-mkt">spreads</span></td>
   <td>Los Angeles Dodgers -1.5</td>
-  <td class="mono fair-cell" title="pinnacle: -110 (raw -116)&#10;matchbook: -108 (raw -112)">-109 <span class="muted">(52.17%)</span></td>
-  <td class="mono muted">-118</td>
-  <td class="mono">-109</td>
-  <td class="mono pos">-107 <span class="muted">(+1.0%)</span></td>
-  <td>3.6%</td>
+  <td class="mono">-101 <span class="muted">(50.19%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono muted">-106</td>
+  <td class="mono">-101</td>
+  <td class="mono pos">+101 <span class="muted">(+1.0%)</span></td>
+  <td>2.7%</td>
 </tr>
 
-<tr>
-  <td>Los Angeles Angels @ Athletics</td>
-  <td class="muted">6/20 10:06 PM EDT</td>
-  <td><span class="tag tag-mkt">totals</span></td>
-  <td>Over 9.5</td>
-  <td class="mono fair-cell" title="pinnacle: -104 (raw -111)&#10;matchbook: -103 (raw -109)">-103 <span class="muted">(50.77%)</span></td>
-  <td class="mono muted">-109</td>
-  <td class="mono">-103</td>
-  <td class="mono pos">-101 <span class="muted">(+1.0%)</span></td>
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-105</td>
+        <td class="mono">+100 <span class="muted">(50.0%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-106</td>
+        <td class="mono">-102 <span class="muted">(50.4%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-101</span> (50.19%) ·
+      Novig now <span class="mono">-106</span> this side · <span class="mono">+104</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>St. Louis Cardinals @ Kansas City Royals</td>
+  <td class="muted">6/21 02:11 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>St. Louis Cardinals</td>
+  <td class="mono">-109 <span class="muted">(52.14%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-115</td>
+  <td class="mono">-109</td>
+  <td class="mono pos">-107 <span class="muted">(+1.0%)</span></td>
   <td>2.6%</td>
 </tr>
 
-<tr>
-  <td>San Francisco Giants @ Miami Marlins</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-147</td>
+        <td class="mono">-109 <span class="muted">(52.1%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-109</span> (52.14%) ·
+      Novig now <span class="mono">-115</span> this side · <span class="mono">+108</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Los Angeles Angels @ Athletics</td>
+  <td class="muted">6/20 10:06 PM EDT</td>
   <td><span class="tag tag-mkt">totals</span></td>
-  <td>Over 7.5</td>
-  <td class="mono fair-cell" title="pinnacle: -107 (raw -114)&#10;matchbook: -106 (raw -111)">-107 <span class="muted">(51.6%)</span></td>
+  <td>Over 9.5</td>
+  <td class="mono">-107 <span class="muted">(51.66%)</span><span class="src-badge ">2 bk</span></td>
   <td class="mono muted">-112</td>
   <td class="mono">-107</td>
-  <td class="mono pos">-104 <span class="muted">(+1.0%)</span></td>
-  <td>2.5%</td>
-</tr>
-
-<tr>
-  <td>Cleveland Guardians @ Houston Astros</td>
-  <td class="muted">6/20 07:16 PM EDT</td>
-  <td><span class="tag tag-mkt">spreads</span></td>
-  <td>Houston Astros -1.5</td>
-  <td class="mono fair-cell" title="pinnacle: +161 (raw +155)&#10;matchbook: +158 (raw +152)">+159 <span class="muted">(38.55%)</span></td>
-  <td class="mono muted">+153</td>
-  <td class="mono">+159</td>
-  <td class="mono pos">+162 <span class="muted">(+1.0%)</span></td>
-  <td>2.5%</td>
-</tr>
-
-<tr>
-  <td>New York Mets @ Philadelphia Phillies</td>
-  <td class="muted">6/20 07:16 PM EDT</td>
-  <td><span class="tag tag-mkt">totals</span></td>
-  <td>Over 7.5</td>
-  <td class="mono fair-cell" title="pinnacle: +108 (raw +102)&#10;matchbook: +106 (raw +100)">+107 <span class="muted">(48.33%)</span></td>
-  <td class="mono muted">+102</td>
-  <td class="mono">+107</td>
-  <td class="mono pos">+109 <span class="muted">(+1.0%)</span></td>
+  <td class="mono pos">-105 <span class="muted">(+1.0%)</span></td>
   <td>2.4%</td>
 </tr>
 
-<tr>
-  <td>Minnesota Twins @ Arizona Diamondbacks</td>
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-114</td>
+        <td class="mono">-106 <span class="muted">(51.5%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-111</td>
+        <td class="mono">-107 <span class="muted">(51.8%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-107</span> (51.66%) ·
+      Novig now <span class="mono">-112</span> this side · <span class="mono">+106</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Washington Nationals @ Tampa Bay Rays</td>
+  <td class="muted">6/21 01:41 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Washington Nationals</td>
+  <td class="mono">+130 <span class="muted">(43.43%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">+125</td>
+  <td class="mono">+130</td>
+  <td class="mono pos">+133 <span class="muted">(+1.0%)</span></td>
+  <td>2.3%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-102</td>
+        <td class="mono">+130 <span class="muted">(43.4%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+130</span> (43.43%) ·
+      Novig now <span class="mono">+125</span> this side · <span class="mono">-133</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Pittsburgh Pirates @ Colorado Rockies</td>
+  <td class="muted">6/21 03:11 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Colorado Rockies</td>
+  <td class="mono">+129 <span class="muted">(43.58%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">+125</td>
+  <td class="mono">+129</td>
+  <td class="mono pos">+132 <span class="muted">(+1.0%)</span></td>
+  <td>2.0%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">+102</td>
+        <td class="mono">+129 <span class="muted">(43.6%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+129</span> (43.58%) ·
+      Novig now <span class="mono">+125</span> this side · <span class="mono">-133</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Minnesota Twins @ Arizona Diamondbacks</td>
+  <td class="muted">6/20 10:11 PM EDT</td>
+  <td><span class="tag tag-mkt">totals</span></td>
+  <td>Over 9.5</td>
+  <td class="mono">+117 <span class="muted">(46.06%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">+113</td>
+  <td class="mono">+117</td>
+  <td class="mono pos">+119 <span class="muted">(+1.0%)</span></td>
+  <td>1.9%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">+112</td>
+        <td class="mono">+117 <span class="muted">(46.1%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+117</span> (46.06%) ·
+      Novig now <span class="mono">+113</span> this side · <span class="mono">-130</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Cleveland Guardians @ Houston Astros</td>
+  <td class="muted">6/20 07:16 PM EDT</td>
+  <td><span class="tag tag-mkt">spreads</span></td>
+  <td>Houston Astros -1.5</td>
+  <td class="mono">+152 <span class="muted">(39.73%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono muted">+147</td>
+  <td class="mono">+152</td>
+  <td class="mono pos">+154 <span class="muted">(+1.0%)</span></td>
+  <td>1.9%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">+147</td>
+        <td class="mono">+153 <span class="muted">(39.5%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">+146</td>
+        <td class="mono">+150 <span class="muted">(40.0%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+152</span> (39.73%) ·
+      Novig now <span class="mono">+147</span> this side · <span class="mono">-154</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Boston Red Sox @ Seattle Mariners</td>
+  <td class="muted">6/20 10:11 PM EDT</td>
+  <td><span class="tag tag-mkt">h2h</span></td>
+  <td>Seattle Mariners</td>
+  <td class="mono">-113 <span class="muted">(53.05%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono muted">-118</td>
+  <td class="mono">-113</td>
+  <td class="mono pos">-111 <span class="muted">(+1.0%)</span></td>
+  <td>1.9%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-119</td>
+        <td class="mono">-114 <span class="muted">(53.3%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-116</td>
+        <td class="mono">-112 <span class="muted">(52.8%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-113</span> (53.05%) ·
+      Novig now <span class="mono">-118</span> this side · <span class="mono">+111</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Minnesota Twins @ Arizona Diamondbacks</td>
   <td class="muted">6/20 10:11 PM EDT</td>
   <td><span class="tag tag-mkt">spreads</span></td>
   <td>Minnesota Twins +1.5</td>
-  <td class="mono fair-cell" title="pinnacle: -166 (raw -179)&#10;matchbook: -166 (raw -172)">-166 <span class="muted">(62.4%)</span></td>
+  <td class="mono">-167 <span class="muted">(62.56%)</span><span class="src-badge ">2 bk</span></td>
   <td class="mono muted">-175</td>
-  <td class="mono">-166</td>
-  <td class="mono pos">-162 <span class="muted">(+1.0%)</span></td>
-  <td>2.1%</td>
+  <td class="mono">-167</td>
+  <td class="mono pos">-163 <span class="muted">(+1.0%)</span></td>
+  <td>1.8%</td>
 </tr>
 
-<tr>
-  <td>Washington Nationals @ Tampa Bay Rays</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
-  <td><span class="tag tag-mkt">totals</span></td>
-  <td>Over 7.5</td>
-  <td class="mono fair-cell" title="matchbook: -115 (raw -122)">-115 <span class="muted">(53.57%)</span></td>
-  <td class="mono muted">-120</td>
-  <td class="mono">-115</td>
-  <td class="mono pos">-113 <span class="muted">(+1.0%)</span></td>
-  <td>2.0%</td>
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-179</td>
+        <td class="mono">-166 <span class="muted">(62.4%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-175</td>
+        <td class="mono">-168 <span class="muted">(62.7%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-167</span> (62.56%) ·
+      Novig now <span class="mono">-175</span> this side · <span class="mono">+163</span> opposite
+    </div>
+  </td>
 </tr>
 
-<tr>
-  <td>San Francisco Giants @ Miami Marlins</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
-  <td><span class="tag tag-mkt">h2h</span></td>
-  <td>Miami Marlins</td>
-  <td class="mono fair-cell" title="pinnacle: -128 (raw -133)&#10;matchbook: -127 (raw -133)">-127 <span class="muted">(56.03%)</span></td>
-  <td class="mono muted">-133</td>
-  <td class="mono">-127</td>
-  <td class="mono pos">-125 <span class="muted">(+1.0%)</span></td>
-  <td>2.0%</td>
-</tr>
 
-<tr>
-  <td>Washington Nationals @ Tampa Bay Rays</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
-  <td><span class="tag tag-mkt">h2h</span></td>
-  <td>Washington Nationals</td>
-  <td class="mono fair-cell" title="pinnacle: +112 (raw +108)&#10;matchbook: +112 (raw +108)">+112 <span class="muted">(47.14%)</span></td>
-  <td class="mono muted">+108</td>
-  <td class="mono">+112</td>
-  <td class="mono pos">+114 <span class="muted">(+1.0%)</span></td>
-  <td>2.0%</td>
-</tr>
-
-<tr>
-  <td>Pittsburgh Pirates @ Colorado Rockies</td>
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Pittsburgh Pirates @ Colorado Rockies</td>
   <td class="muted">6/20 09:11 PM EDT</td>
   <td><span class="tag tag-mkt">h2h</span></td>
   <td>Colorado Rockies</td>
-  <td class="mono fair-cell" title="pinnacle: +189 (raw +183)&#10;matchbook: +195 (raw +190)">+192 <span class="muted">(34.29%)</span></td>
-  <td class="mono muted">+186</td>
-  <td class="mono">+192</td>
-  <td class="mono pos">+195 <span class="muted">(+1.0%)</span></td>
-  <td>2.0%</td>
+  <td class="mono">+199 <span class="muted">(33.41%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono muted">+194</td>
+  <td class="mono">+199</td>
+  <td class="mono pos">+202 <span class="muted">(+1.0%)</span></td>
+  <td>1.8%</td>
 </tr>
 
-<tr>
-  <td>Minnesota Twins @ Arizona Diamondbacks</td>
-  <td class="muted">6/20 10:11 PM EDT</td>
-  <td><span class="tag tag-mkt">h2h</span></td>
-  <td>Arizona Diamondbacks</td>
-  <td class="mono fair-cell" title="pinnacle: -121 (raw -127)&#10;matchbook: -118 (raw -123)">-120 <span class="muted">(54.49%)</span></td>
-  <td class="mono muted">-125</td>
-  <td class="mono">-120</td>
-  <td class="mono pos">-117 <span class="muted">(+1.0%)</span></td>
-  <td>2.0%</td>
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">+192</td>
+        <td class="mono">+199 <span class="muted">(33.5%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">+198</td>
+        <td class="mono">+200 <span class="muted">(33.3%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+199</span> (33.41%) ·
+      Novig now <span class="mono">+194</span> this side · <span class="mono">-204</span> opposite
+    </div>
+  </td>
 </tr>
 
-<tr>
-  <td>Pittsburgh Pirates @ Colorado Rockies</td>
-  <td class="muted">6/20 09:11 PM EDT</td>
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Cleveland Guardians @ Houston Astros</td>
+  <td class="muted">6/20 07:16 PM EDT</td>
   <td><span class="tag tag-mkt">totals</span></td>
-  <td>Over 10.5</td>
-  <td class="mono fair-cell" title="pinnacle: +101 (raw -105)&#10;matchbook: +103 (raw -103)">+102 <span class="muted">(49.55%)</span></td>
+  <td>Under 8.5</td>
+  <td class="mono">-107 <span class="muted">(51.73%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono muted">-111</td>
+  <td class="mono">-107</td>
+  <td class="mono pos">-105 <span class="muted">(+1.0%)</span></td>
+  <td>1.7%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-114</td>
+        <td class="mono">-107 <span class="muted">(51.7%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-114</td>
+        <td class="mono">-107 <span class="muted">(51.8%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-107</span> (51.73%) ·
+      Novig now <span class="mono">-111</span> this side · <span class="mono">+108</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Boston Red Sox @ Seattle Mariners</td>
+  <td class="muted">6/20 10:11 PM EDT</td>
+  <td><span class="tag tag-mkt">totals</span></td>
+  <td>Under 7.5</td>
+  <td class="mono">-116 <span class="muted">(53.81%)</span><span class="src-badge src-1">1 bk</span></td>
+  <td class="mono muted">-120</td>
+  <td class="mono">-116</td>
+  <td class="mono pos">-114 <span class="muted">(+1.0%)</span></td>
+  <td>1.6%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (1)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-122</td>
+        <td class="mono">-116 <span class="muted">(53.8%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">-116</span> (53.81%) ·
+      Novig now <span class="mono">-120</span> this side · <span class="mono">+115</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>Minnesota Twins @ Arizona Diamondbacks</td>
+  <td class="muted">6/20 10:11 PM EDT</td>
+  <td><span class="tag tag-mkt">spreads</span></td>
+  <td>Arizona Diamondbacks -1.5</td>
+  <td class="mono">+167 <span class="muted">(37.44%)</span><span class="src-badge ">2 bk</span></td>
+  <td class="mono muted">+163</td>
+  <td class="mono">+167</td>
+  <td class="mono pos">+170 <span class="muted">(+1.0%)</span></td>
+  <td>1.6%</td>
+</tr>
+
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">+159</td>
+        <td class="mono">+166 <span class="muted">(37.6%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">+164</td>
+        <td class="mono">+168 <span class="muted">(37.3%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+167</span> (37.44%) ·
+      Novig now <span class="mono">+163</span> this side · <span class="mono">-175</span> opposite
+    </div>
+  </td>
+</tr>
+
+
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>New York Mets @ Philadelphia Phillies</td>
+  <td class="muted">6/20 07:16 PM EDT</td>
+  <td><span class="tag tag-mkt">totals</span></td>
+  <td>Under 7.5</td>
+  <td class="mono">+101 <span class="muted">(49.74%)</span><span class="src-badge ">2 bk</span></td>
   <td class="mono muted">-102</td>
-  <td class="mono">+102</td>
-  <td class="mono pos">+104 <span class="muted">(+1.0%)</span></td>
-  <td>1.9%</td>
+  <td class="mono">+101</td>
+  <td class="mono pos">+103 <span class="muted">(+1.0%)</span></td>
+  <td>1.5%</td>
 </tr>
 
-<tr>
-  <td>San Diego Padres @ Texas Rangers</td>
-  <td class="muted">6/20 04:06 PM EDT</td>
-  <td><span class="tag tag-mkt">h2h</span></td>
-  <td>Texas Rangers</td>
-  <td class="mono fair-cell" title="pinnacle: -119 (raw -123)&#10;matchbook: -121 (raw -125)">-120 <span class="muted">(54.53%)</span></td>
-  <td class="mono muted">-125</td>
-  <td class="mono">-120</td>
-  <td class="mono pos">-117 <span class="muted">(+1.0%)</span></td>
-  <td>1.9%</td>
+<tr class="detail-row" hidden>
+  <td colspan="9">
+    <div class="detail-title">Sharp books behind this fair value (2)</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      
+      <tr>
+        <td>Pinnacle</td>
+        <td class="mono">-106</td>
+        <td class="mono">+100 <span class="muted">(50.0%)</span></td>
+      </tr>
+      
+      <tr>
+        <td>Matchbook</td>
+        <td class="mono">-103</td>
+        <td class="mono">+102 <span class="muted">(49.5%)</span></td>
+      </tr>
+      
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">+101</span> (49.74%) ·
+      Novig now <span class="mono">-102</span> this side · <span class="mono">-102</span> opposite
+    </div>
+  </td>
 </tr>
 
-<tr>
-  <td>San Francisco Giants @ Miami Marlins</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
-  <td><span class="tag tag-mkt">spreads</span></td>
-  <td>Miami Marlins -1.5</td>
-  <td class="mono fair-cell" title="pinnacle: +164 (raw +157)&#10;matchbook: +166 (raw +162)">+165 <span class="muted">(37.77%)</span></td>
-  <td class="mono muted">+160</td>
-  <td class="mono">+165</td>
-  <td class="mono pos">+167 <span class="muted">(+1.0%)</span></td>
-  <td>1.8%</td>
-</tr>
-
-<tr>
-  <td>Cleveland Guardians @ Houston Astros</td>
-  <td class="muted">6/20 07:16 PM EDT</td>
-  <td><span class="tag tag-mkt">h2h</span></td>
-  <td>Houston Astros</td>
-  <td class="mono fair-cell" title="pinnacle: -129 (raw -135)&#10;matchbook: -130 (raw -135)">-130 <span class="muted">(56.45%)</span></td>
-  <td class="mono muted">-135</td>
-  <td class="mono">-130</td>
-  <td class="mono pos">-127 <span class="muted">(+1.0%)</span></td>
-  <td>1.8%</td>
-</tr>
-
-<tr>
-  <td>New York Mets @ Philadelphia Phillies</td>
-  <td class="muted">6/20 07:16 PM EDT</td>
-  <td><span class="tag tag-mkt">spreads</span></td>
-  <td>Philadelphia Phillies -1.5</td>
-  <td class="mono fair-cell" title="pinnacle: +124 (raw +119)&#10;matchbook: +124 (raw +120)">+124 <span class="muted">(44.64%)</span></td>
-  <td class="mono muted">+120</td>
-  <td class="mono">+124</td>
-  <td class="mono pos">+126 <span class="muted">(+1.0%)</span></td>
-  <td>1.8%</td>
-</tr>
-
-<tr>
-  <td>Milwaukee Brewers @ Atlanta Braves</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
-  <td><span class="tag tag-mkt">totals</span></td>
-  <td>Under 7.5</td>
-  <td class="mono fair-cell" title="matchbook: -122 (raw -127)">-122 <span class="muted">(54.91%)</span></td>
-  <td class="mono muted">-127</td>
-  <td class="mono">-122</td>
-  <td class="mono pos">-119 <span class="muted">(+1.0%)</span></td>
-  <td>1.7%</td>
-</tr>
-
-<tr>
-  <td>Cleveland Guardians @ Houston Astros</td>
-  <td class="muted">6/20 07:16 PM EDT</td>
-  <td><span class="tag tag-mkt">spreads</span></td>
-  <td>Cleveland Guardians +1.5</td>
-  <td class="mono fair-cell" title="pinnacle: -161 (raw -172)&#10;matchbook: -158 (raw -167)">-159 <span class="muted">(61.45%)</span></td>
-  <td class="mono muted">-167</td>
-  <td class="mono">-159</td>
-  <td class="mono pos">-155 <span class="muted">(+1.0%)</span></td>
-  <td>1.7%</td>
-</tr>
-
-<tr>
-  <td>Boston Red Sox @ Seattle Mariners</td>
-  <td class="muted">6/20 10:11 PM EDT</td>
-  <td><span class="tag tag-mkt">totals</span></td>
-  <td>Under 7.5</td>
-  <td class="mono fair-cell" title="matchbook: -118 (raw -125)">-118 <span class="muted">(54.08%)</span></td>
-  <td class="mono muted">-122</td>
-  <td class="mono">-118</td>
-  <td class="mono pos">-115 <span class="muted">(+1.0%)</span></td>
-  <td>1.6%</td>
-</tr>
-
-<tr>
-  <td>Los Angeles Angels @ Athletics</td>
-  <td class="muted">6/20 10:06 PM EDT</td>
-  <td><span class="tag tag-mkt">totals</span></td>
-  <td>Under 9.5</td>
-  <td class="mono fair-cell" title="pinnacle: +104 (raw -103)&#10;matchbook: +103 (raw -103)">+103 <span class="muted">(49.23%)</span></td>
-  <td class="mono muted">+100</td>
-  <td class="mono">+103</td>
-  <td class="mono pos">+105 <span class="muted">(+1.0%)</span></td>
-  <td>1.6%</td>
-</tr>
-
-<tr>
-  <td>Milwaukee Brewers @ Atlanta Braves</td>
-  <td class="muted">6/20 04:11 PM EDT</td>
-  <td><span class="tag tag-mkt">spreads</span></td>
-  <td>Milwaukee Brewers +1.5</td>
-  <td class="mono fair-cell" title="pinnacle: -182 (raw -196)&#10;matchbook: -179 (raw -189)">-181 <span class="muted">(64.36%)</span></td>
-  <td class="mono muted">-189</td>
-  <td class="mono">-181</td>
-  <td class="mono pos">-176 <span class="muted">(+1.0%)</span></td>
-  <td>1.6%</td>
-</tr>
 
 </tbody>
 </table>
@@ -377,78 +1126,68 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 
 
 <details>
-  <summary>Below threshold (38)</summary>
+  <summary>Below threshold (35)</summary>
   <table style="margin-top:0.5rem">
   <thead><tr><th>Game</th><th>Mkt</th><th>Side</th><th>Kind</th><th>Sharp fair</th><th>Novig now</th><th>Why hidden</th></tr></thead>
   <tbody>
   
   <tr>
-    <td>San Diego Padres @ Texas Rangers</td>
+    <td>Chicago White Sox @ Detroit Tigers</td>
     <td><span class="tag tag-mkt">spreads</span></td>
-    <td>Texas Rangers -1.5</td>
+    <td>Detroit Tigers +1.5</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+174</td>
-    <td class="mono">+170</td>
-    <td class="muted">shading room 1.5% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Washington Nationals @ Tampa Bay Rays</td>
-    <td><span class="tag tag-mkt">spreads</span></td>
-    <td>Tampa Bay Rays -1.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+182</td>
-    <td class="mono">+178</td>
-    <td class="muted">shading room 1.4% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Washington Nationals @ Tampa Bay Rays</td>
-    <td><span class="tag tag-mkt">spreads</span></td>
-    <td>Washington Nationals +1.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-182</td>
-    <td class="mono">-189</td>
-    <td class="muted">shading room 1.3% &lt; 1.5%</td>
+    <td class="mono">-147</td>
+    <td class="mono">-217</td>
+    <td class="muted">gap 15.0% &gt; 8.0% (unlikely fill)</td>
   </tr>
   
   <tr>
     <td>Boston Red Sox @ Seattle Mariners</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Over 7.5</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Boston Red Sox</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+118</td>
-    <td class="mono">+115</td>
+    <td class="mono">+125</td>
+    <td class="mono">+122</td>
+    <td class="muted">shading room 1.5% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Pittsburgh Pirates @ Colorado Rockies</td>
+    <td><span class="tag tag-mkt">totals</span></td>
+    <td>Over 10.5</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">-108</td>
+    <td class="mono">-111</td>
+    <td class="muted">shading room 1.4% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Cincinnati Reds @ New York Yankees</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>New York Yankees</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">-131</td>
+    <td class="mono">-135</td>
     <td class="muted">shading room 1.3% &lt; 1.5%</td>
   </tr>
   
   <tr>
-    <td>San Diego Padres @ Texas Rangers</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Under 7.5</td>
+    <td>Pittsburgh Pirates @ Colorado Rockies</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Pittsburgh Pirates</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-102</td>
-    <td class="mono">-104</td>
+    <td class="mono">-129</td>
+    <td class="mono">-133</td>
     <td class="muted">shading room 1.3% &lt; 1.5%</td>
   </tr>
   
   <tr>
     <td>Minnesota Twins @ Arizona Diamondbacks</td>
     <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Minnesota Twins</td>
+    <td>Arizona Diamondbacks</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+120</td>
-    <td class="mono">+117</td>
-    <td class="muted">shading room 1.2% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>New York Mets @ Philadelphia Phillies</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>New York Mets</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+173</td>
-    <td class="mono">+170</td>
+    <td class="mono">-119</td>
+    <td class="mono">-122</td>
     <td class="muted">shading room 1.2% &lt; 1.5%</td>
   </tr>
   
@@ -457,59 +1196,9 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
     <td><span class="tag tag-mkt">h2h</span></td>
     <td>Tampa Bay Rays</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-112</td>
-    <td class="mono">-115</td>
-    <td class="muted">shading room 1.2% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Washington Nationals @ Tampa Bay Rays</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Under 7.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+115</td>
-    <td class="mono">+113</td>
-    <td class="muted">shading room 1.1% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>New York Mets @ Philadelphia Phillies</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Philadelphia Phillies</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-173</td>
-    <td class="mono">-179</td>
-    <td class="muted">shading room 1.1% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Minnesota Twins @ Arizona Diamondbacks</td>
-    <td><span class="tag tag-mkt">spreads</span></td>
-    <td>Arizona Diamondbacks -1.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+166</td>
-    <td class="mono">+163</td>
-    <td class="muted">shading room 1.1% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>San Francisco Giants @ Miami Marlins</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>San Francisco Giants</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+127</td>
-    <td class="mono">+125</td>
-    <td class="muted">shading room 1.1% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>San Francisco Giants @ Miami Marlins</td>
-    <td><span class="tag tag-mkt">spreads</span></td>
-    <td>San Francisco Giants +1.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-165</td>
-    <td class="mono">-169</td>
-    <td class="muted">shading room 1.1% &lt; 1.5%</td>
+    <td class="mono">-130</td>
+    <td class="mono">-133</td>
+    <td class="muted">shading room 1.0% &lt; 1.5%</td>
   </tr>
   
   <tr>
@@ -519,56 +1208,56 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
     <td><span class="tag tag-make">MAKE</span></td>
     <td class="mono">+127</td>
     <td class="mono">+125</td>
-    <td class="muted">shading room 1.1% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Boston Red Sox @ Seattle Mariners</td>
-    <td><span class="tag tag-mkt">spreads</span></td>
-    <td>Seattle Mariners -1.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+185</td>
-    <td class="mono">+182</td>
     <td class="muted">shading room 1.0% &lt; 1.5%</td>
   </tr>
   
   <tr>
-    <td>San Diego Padres @ Texas Rangers</td>
-    <td><span class="tag tag-mkt">spreads</span></td>
-    <td>San Diego Padres +1.5</td>
+    <td>Baltimore Orioles @ Los Angeles Dodgers</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Baltimore Orioles</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-174</td>
-    <td class="mono">-179</td>
-    <td class="muted">shading room 0.9% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>New York Mets @ Philadelphia Phillies</td>
-    <td><span class="tag tag-mkt">spreads</span></td>
-    <td>New York Mets +1.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-124</td>
-    <td class="mono">-127</td>
-    <td class="muted">shading room 0.9% &lt; 1.5%</td>
+    <td class="mono">+211</td>
+    <td class="mono">+208</td>
+    <td class="muted">shading room 1.0% &lt; 1.5%</td>
   </tr>
   
   <tr>
     <td>Pittsburgh Pirates @ Colorado Rockies</td>
     <td><span class="tag tag-mkt">totals</span></td>
     <td>Under 10.5</td>
-    <td><span class="tag tag-take">TAKE</span></td>
-    <td class="mono">-102</td>
-    <td class="mono">+100</td>
-    <td class="muted">take EV 0.9% &lt; 1.0%</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+108</td>
+    <td class="mono">+106</td>
+    <td class="muted">shading room 1.0% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Baltimore Orioles @ Los Angeles Dodgers</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Los Angeles Dodgers</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">-211</td>
+    <td class="mono">-217</td>
+    <td class="muted">shading room 0.9% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Boston Red Sox @ Seattle Mariners</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Boston Red Sox</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+113</td>
+    <td class="mono">+111</td>
+    <td class="muted">shading room 0.9% &lt; 1.5%</td>
   </tr>
   
   <tr>
     <td>Cleveland Guardians @ Houston Astros</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Over 8.5</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Houston Astros</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+106</td>
-    <td class="mono">+104</td>
+    <td class="mono">-136</td>
+    <td class="mono">-139</td>
     <td class="muted">shading room 0.9% &lt; 1.5%</td>
   </tr>
   
@@ -579,47 +1268,37 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
     <td><span class="tag tag-make">MAKE</span></td>
     <td class="mono">-127</td>
     <td class="mono">-130</td>
-    <td class="muted">shading room 0.8% &lt; 1.5%</td>
+    <td class="muted">shading room 0.9% &lt; 1.5%</td>
   </tr>
   
   <tr>
-    <td>New York Mets @ Philadelphia Phillies</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Under 7.5</td>
+    <td>Minnesota Twins @ Arizona Diamondbacks</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Minnesota Twins</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-107</td>
-    <td class="mono">-109</td>
+    <td class="mono">+119</td>
+    <td class="mono">+117</td>
     <td class="muted">shading room 0.8% &lt; 1.5%</td>
   </tr>
   
   <tr>
     <td>Boston Red Sox @ Seattle Mariners</td>
     <td><span class="tag tag-mkt">spreads</span></td>
-    <td>Boston Red Sox +1.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-185</td>
-    <td class="mono">-189</td>
-    <td class="muted">shading room 0.7% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Boston Red Sox @ Seattle Mariners</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Seattle Mariners</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-116</td>
-    <td class="mono">-118</td>
-    <td class="muted">shading room 0.7% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>San Francisco Giants @ Miami Marlins</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Under 7.5</td>
+    <td>Seattle Mariners -1.5</td>
     <td><span class="tag tag-take">TAKE</span></td>
-    <td class="mono">+107</td>
-    <td class="mono">+108</td>
-    <td class="muted">take EV 0.7% &lt; 1.0%</td>
+    <td class="mono">+188</td>
+    <td class="mono">+190</td>
+    <td class="muted">take EV 0.8% &lt; 1.0%</td>
+  </tr>
+  
+  <tr>
+    <td>Pittsburgh Pirates @ Colorado Rockies</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Pittsburgh Pirates</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">-199</td>
+    <td class="mono">-204</td>
+    <td class="muted">shading room 0.8% &lt; 1.5%</td>
   </tr>
   
   <tr>
@@ -627,59 +1306,39 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
     <td><span class="tag tag-mkt">h2h</span></td>
     <td>Atlanta Braves</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-120</td>
-    <td class="mono">-122</td>
+    <td class="mono">-123</td>
+    <td class="mono">-125</td>
     <td class="muted">shading room 0.7% &lt; 1.5%</td>
   </tr>
   
   <tr>
-    <td>Minnesota Twins @ Arizona Diamondbacks</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Over 9.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+118</td>
-    <td class="mono">+117</td>
-    <td class="muted">shading room 0.6% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Baltimore Orioles @ Los Angeles Dodgers</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Los Angeles Dodgers</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-234</td>
-    <td class="mono">-238</td>
-    <td class="muted">shading room 0.6% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Pittsburgh Pirates @ Colorado Rockies</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Pittsburgh Pirates</td>
-    <td><span class="tag tag-take">TAKE</span></td>
-    <td class="mono">-192</td>
-    <td class="mono">-189</td>
-    <td class="muted">take EV 0.5% &lt; 1.0%</td>
-  </tr>
-  
-  <tr>
-    <td>Los Angeles Angels @ Athletics</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Los Angeles Angels</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+154</td>
-    <td class="mono">+153</td>
-    <td class="muted">shading room 0.5% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Milwaukee Brewers @ Atlanta Braves</td>
+    <td>New York Mets @ Philadelphia Phillies</td>
     <td><span class="tag tag-mkt">spreads</span></td>
-    <td>Atlanta Braves -1.5</td>
-    <td><span class="tag tag-take">TAKE</span></td>
-    <td class="mono">+181</td>
-    <td class="mono">+182</td>
-    <td class="muted">take EV 0.5% &lt; 1.0%</td>
+    <td>Philadelphia Phillies -1.5</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+122</td>
+    <td class="mono">+120</td>
+    <td class="muted">shading room 0.7% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>New York Mets @ Philadelphia Phillies</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Philadelphia Phillies</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">-175</td>
+    <td class="mono">-179</td>
+    <td class="muted">shading room 0.7% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Boston Red Sox @ Seattle Mariners</td>
+    <td><span class="tag tag-mkt">totals</span></td>
+    <td>Over 7.5</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+116</td>
+    <td class="mono">+115</td>
+    <td class="muted">shading room 0.7% &lt; 1.5%</td>
   </tr>
   
   <tr>
@@ -689,37 +1348,107 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
     <td><span class="tag tag-make">MAKE</span></td>
     <td class="mono">-154</td>
     <td class="mono">-156</td>
+    <td class="muted">shading room 0.6% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Cleveland Guardians @ Houston Astros</td>
+    <td><span class="tag tag-mkt">spreads</span></td>
+    <td>Cleveland Guardians +1.5</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">-152</td>
+    <td class="mono">-154</td>
+    <td class="muted">shading room 0.6% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Chicago White Sox @ Detroit Tigers</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Chicago White Sox</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+103</td>
+    <td class="mono">+102</td>
     <td class="muted">shading room 0.5% &lt; 1.5%</td>
   </tr>
   
   <tr>
-    <td>Boston Red Sox @ Seattle Mariners</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Boston Red Sox</td>
+    <td>New York Mets @ Philadelphia Phillies</td>
+    <td><span class="tag tag-mkt">totals</span></td>
+    <td>Over 7.5</td>
     <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+116</td>
-    <td class="mono">+115</td>
+    <td class="mono">-101</td>
+    <td class="mono">-102</td>
+    <td class="muted">shading room 0.5% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>St. Louis Cardinals @ Kansas City Royals</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Kansas City Royals</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+109</td>
+    <td class="mono">+108</td>
+    <td class="muted">shading room 0.5% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>New York Mets @ Philadelphia Phillies</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>New York Mets</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+175</td>
+    <td class="mono">+174</td>
     <td class="muted">shading room 0.4% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Los Angeles Angels @ Athletics</td>
+    <td><span class="tag tag-mkt">totals</span></td>
+    <td>Under 9.5</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+107</td>
+    <td class="mono">+106</td>
+    <td class="muted">shading room 0.4% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Baltimore Orioles @ Los Angeles Dodgers</td>
+    <td><span class="tag tag-mkt">totals</span></td>
+    <td>Over 8.5</td>
+    <td><span class="tag tag-take">TAKE</span></td>
+    <td class="mono">+114</td>
+    <td class="mono">+115</td>
+    <td class="muted">take EV 0.4% &lt; 1.0%</td>
   </tr>
   
   <tr>
     <td>Cleveland Guardians @ Houston Astros</td>
     <td><span class="tag tag-mkt">totals</span></td>
-    <td>Under 8.5</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">-106</td>
-    <td class="mono">-106</td>
-    <td class="muted">shading room 0.3% &lt; 1.5%</td>
+    <td>Over 8.5</td>
+    <td><span class="tag tag-take">TAKE</span></td>
+    <td class="mono">+107</td>
+    <td class="mono">+108</td>
+    <td class="muted">take EV 0.4% &lt; 1.0%</td>
   </tr>
   
   <tr>
-    <td>San Diego Padres @ Texas Rangers</td>
-    <td><span class="tag tag-mkt">totals</span></td>
-    <td>Over 7.5</td>
-    <td><span class="tag tag-take">TAKE</span></td>
-    <td class="mono">+102</td>
-    <td class="mono">+102</td>
-    <td class="muted">take EV 0.2% &lt; 1.0%</td>
+    <td>Cleveland Guardians @ Houston Astros</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Cleveland Guardians</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+136</td>
+    <td class="mono">+135</td>
+    <td class="muted">shading room 0.4% &lt; 1.5%</td>
+  </tr>
+  
+  <tr>
+    <td>Los Angeles Angels @ Athletics</td>
+    <td><span class="tag tag-mkt">h2h</span></td>
+    <td>Los Angeles Angels</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+154</td>
+    <td class="mono">+153</td>
+    <td class="muted">shading room 0.3% &lt; 1.5%</td>
   </tr>
   
   <tr>
@@ -727,39 +1456,29 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
     <td><span class="tag tag-mkt">h2h</span></td>
     <td>Cleveland Guardians</td>
     <td><span class="tag tag-take">TAKE</span></td>
-    <td class="mono">+130</td>
-    <td class="mono">+130</td>
-    <td class="muted">take EV 0.2% &lt; 1.0%</td>
-  </tr>
-  
-  <tr>
-    <td>Baltimore Orioles @ Los Angeles Dodgers</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Baltimore Orioles</td>
-    <td><span class="tag tag-make">MAKE</span></td>
-    <td class="mono">+234</td>
-    <td class="mono">+233</td>
-    <td class="muted">shading room 0.2% &lt; 1.5%</td>
-  </tr>
-  
-  <tr>
-    <td>Milwaukee Brewers @ Atlanta Braves</td>
-    <td><span class="tag tag-mkt">h2h</span></td>
-    <td>Milwaukee Brewers</td>
-    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">+119</td>
     <td class="mono">+120</td>
-    <td class="mono">+120</td>
-    <td class="muted">shading room 0.1% &lt; 1.5%</td>
+    <td class="muted">take EV 0.3% &lt; 1.0%</td>
   </tr>
   
   <tr>
-    <td>San Diego Padres @ Texas Rangers</td>
+    <td>Toronto Blue Jays @ Chicago Cubs</td>
     <td><span class="tag tag-mkt">h2h</span></td>
-    <td>San Diego Padres</td>
+    <td>Toronto Blue Jays</td>
     <td><span class="tag tag-take">TAKE</span></td>
-    <td class="mono">+120</td>
-    <td class="mono">+120</td>
-    <td class="muted">take EV 0.0% &lt; 1.0%</td>
+    <td class="mono">-113</td>
+    <td class="mono">-112</td>
+    <td class="muted">take EV 0.1% &lt; 1.0%</td>
+  </tr>
+  
+  <tr>
+    <td>New York Mets @ Philadelphia Phillies</td>
+    <td><span class="tag tag-mkt">spreads</span></td>
+    <td>New York Mets +1.5</td>
+    <td><span class="tag tag-make">MAKE</span></td>
+    <td class="mono">-122</td>
+    <td class="mono">-122</td>
+    <td class="muted">shading room 0.1% &lt; 1.5%</td>
   </tr>
   
   </tbody>
@@ -767,5 +1486,12 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 </details>
 
 
+<script>
+function toggleDetail(row) {
+  row.classList.toggle('open');
+  const d = row.nextElementSibling;
+  if (d && d.classList.contains('detail-row')) d.hidden = !d.hidden;
+}
+</script>
 </body>
 </html>

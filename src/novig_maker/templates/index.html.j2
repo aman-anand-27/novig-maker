@@ -41,11 +41,26 @@ tbody tr:hover { background: var(--surface); }
 .tag-take { background: rgba(63,185,80,0.15); color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
 .tag-make { background: rgba(188,140,255,0.15); color: var(--purple); border: 1px solid rgba(188,140,255,0.3); }
 .tag-mkt { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
-.fair-cell { cursor: help; border-bottom: 1px dotted var(--muted); }
 .count { color: var(--muted); font-weight: 400; font-size: 0.8rem; }
 details { margin-top: 1rem; }
 summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 .empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; }
+/* ── Click-to-expand book breakdown ─────────────────────────────── */
+.edge-row { cursor: pointer; }
+.caret { color: var(--muted); display: inline-block; width: 0.9em; font-size: 0.7rem;
+  transition: transform 0.1s; }
+.edge-row.open .caret { transform: rotate(90deg); }
+.src-badge { font-size: 0.62rem; padding: 0.04em 0.45em; border-radius: 8px;
+  margin-left: 0.45em; border: 1px solid var(--border); color: var(--muted);
+  vertical-align: middle; }
+.src-1 { color: var(--yellow); border-color: rgba(210,153,34,0.4); background: rgba(210,153,34,0.12); }
+.detail-row > td { background: var(--surface2); padding: 0.55rem 0.9rem 0.7rem 2rem; }
+.detail-title { color: var(--muted); font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.03em; margin-bottom: 0.35rem; }
+.detail-table { width: auto; }
+.detail-table th, .detail-table td { border: none; padding: 0.12rem 1.6rem 0.12rem 0; }
+.detail-table th { font-size: 0.64rem; }
+.detail-novig { color: var(--muted); margin-top: 0.45rem; }
 </style>
 </head>
 <body>
@@ -62,8 +77,31 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 
 <div class="legend">
   <b>TAKE</b> — Novig already pays <i>longer</i> than sharp fair, so backing it now is +EV. <b>EV%</b> is your edge.<br>
-  <b>MAKE</b> — Novig's price is short of fair. <b>Post</b> a new best-in-market order at the suggested price (it clears the <b>+EV floor</b> = sharp fair, so it stays profitable) and let soft money on the other side fill it. <b>Gap</b> = how far Novig's current best sits below fair (your shading room). Posting <i>below</i> the floor beats the book but is &minus;EV — don't.
+  <b>MAKE</b> — Novig's price is short of fair. <b>Post</b> a new best-in-market order at the suggested price (it clears the <b>+EV floor</b> = sharp fair, so it stays profitable) and let soft money on the other side fill it. <b>Gap</b> = how far Novig's current best sits below fair (your shading room). Posting <i>below</i> the floor beats the book but is &minus;EV — don't.<br>
+  <span class="muted">Click any row to see which sharp books fed the fair value. A <span class="src-badge src-1">1&nbsp;bk</span> badge means only one book priced that side — treat it as less reliable.</span>
 </div>
+
+{% macro fair_detail_row(r, colspan) %}
+<tr class="detail-row" hidden>
+  <td colspan="{{ colspan }}">
+    <div class="detail-title">Sharp books behind this fair value ({{ r.fair_book_count }})</div>
+    <table class="detail-table">
+      <tr><th>Book</th><th>Its line (this side)</th><th>Devigged fair</th></tr>
+      {% for d in r.fair_details %}
+      <tr>
+        <td>{{ book_labels.get(d.book, d.book) }}</td>
+        <td class="mono">{{ d.raw_american }}</td>
+        <td class="mono">{{ d.fair_american }} <span class="muted">({{ '%.1f' % (d.fair_prob * 100) }}%)</span></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <div class="detail-novig">
+      Blended fair <span class="mono">{{ r.fair_american }}</span> ({{ r.fair_prob_pct }}%) ·
+      Novig now <span class="mono">{{ r.novig_american }}</span> this side{% if r.novig_opp_american %} · <span class="mono">{{ r.novig_opp_american }}</span> opposite{% endif %}
+    </div>
+  </td>
+</tr>
+{% endmacro %}
 
 <h2>✅ TAKE <span class="count">{{ take|length }} edge{{ '' if take|length == 1 else 's' }}</span></h2>
 {% if take %}
@@ -74,15 +112,16 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 </tr></thead>
 <tbody>
 {% for r in take %}
-<tr>
-  <td>{{ r.game }}</td>
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>{{ r.game }}</td>
   <td class="muted">{{ r.commence_time | to_et }}</td>
   <td><span class="tag tag-mkt">{{ r.market }}</span></td>
   <td>{{ r.side }}</td>
-  <td class="mono fair-cell" title="{% for d in r.fair_details %}{{ d.book }}: {{ d.fair_american }} (raw {{ d.raw_american }}){% if not loop.last %}&#10;{% endif %}{% endfor %}">{{ r.fair_american }} <span class="muted">({{ r.fair_prob_pct }}%)</span></td>
+  <td class="mono">{{ r.fair_american }} <span class="muted">({{ r.fair_prob_pct }}%)</span><span class="src-badge {{ 'src-1' if r.fair_book_count == 1 else '' }}">{{ r.fair_book_count }} bk</span></td>
   <td class="mono">{{ r.novig_american }}</td>
   <td class="pos">+{{ '%.1f' % r.take_ev_pct }}%</td>
 </tr>
+{{ fair_detail_row(r, 7) }}
 {% endfor %}
 </tbody>
 </table>
@@ -97,17 +136,18 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 </tr></thead>
 <tbody>
 {% for r in make %}
-<tr>
-  <td>{{ r.game }}</td>
+<tr class="edge-row" onclick="toggleDetail(this)">
+  <td><span class="caret">▸</span>{{ r.game }}</td>
   <td class="muted">{{ r.commence_time | to_et }}</td>
   <td><span class="tag tag-mkt">{{ r.market }}</span></td>
   <td>{{ r.side }}</td>
-  <td class="mono fair-cell" title="{% for d in r.fair_details %}{{ d.book }}: {{ d.fair_american }} (raw {{ d.raw_american }}){% if not loop.last %}&#10;{% endif %}{% endfor %}">{{ r.fair_american }} <span class="muted">({{ r.fair_prob_pct }}%)</span></td>
+  <td class="mono">{{ r.fair_american }} <span class="muted">({{ r.fair_prob_pct }}%)</span><span class="src-badge {{ 'src-1' if r.fair_book_count == 1 else '' }}">{{ r.fair_book_count }} bk</span></td>
   <td class="mono muted">{{ r.novig_american }}</td>
   <td class="mono">{{ r.post_floor_american }}</td>
   <td class="mono pos">{{ r.post_american }} <span class="muted">(+{{ '%.1f' % r.make_ev_pct }}%)</span></td>
   <td>{{ '%.1f' % r.book_gap_pct }}%</td>
 </tr>
+{{ fair_detail_row(r, 9) }}
 {% endfor %}
 </tbody>
 </table>
@@ -135,5 +175,12 @@ summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 </details>
 {% endif %}
 
+<script>
+function toggleDetail(row) {
+  row.classList.toggle('open');
+  const d = row.nextElementSibling;
+  if (d && d.classList.contains('detail-row')) d.hidden = !d.hidden;
+}
+</script>
 </body>
 </html>
